@@ -2,35 +2,35 @@ const db = require("../models");
 
 module.exports = {
 findAll: function (req, res) {
-    db.Wants
+    db.Want
         .find(req.query)
         .sort({createdAt: -1})
-        .then(dbWants => res.json(dbWants))
+        .then(dbWant => res.json(dbWant))
         .catch(err => res.status(422).json(err));
 },
 findById: function(req, res){
-    db.Wants
+    db.Want
     .findById(req.params.id)
-    .then(dbWants => res.json (dbWants))
+    .then(dbWant => res.json (dbWant))
     .catch(err => res. status(422).json(err));
 },
 create: function(req,res){
-    db.Wants
+    db.Want
     .create(req.body)
-    .then(dbWants => res.json(dbWants))
+    .then(dbWant => res.json(dbWant))
     .catch(err => res.status(422).json(err));
 },
 update: function(req, res) {
-    db.Wants
+    db.Want
     .findOneAndUpdate({_id:req.params.id}, req.body)
-    .then(dbWants => res.json (dbwants))
+    .then(dbWant => res.json (dbWant))
     .catch (err => res.status(422).json(err));
 },
 remove: function(req, res) {
-    db.Wants
+    db.Want
     .findById({_id: req.params.id})
-    .then (dbWants => dbWants.remove())
-    .then(dbWants => res.json(dbWants))
+    .then (dbWant => dbWant.remove())
+    .then(dbWant => res.json(dbWant))
     .catch(err=> res. status(422).json(err));
 }
 };

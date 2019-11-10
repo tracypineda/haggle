@@ -1,4 +1,6 @@
 module.exports = {
     User: require("./Users"),
-    Todo: require("./Todos"),
+    Have: require("./Haves"),
+    Want: require("./Wants")
+
   };

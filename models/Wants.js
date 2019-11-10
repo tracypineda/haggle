@@ -1,22 +1,27 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const todosSchema = new Schema({
-  author: {
+const wantsSchema = new Schema({
+  owner: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Want"
   },
-  todo: {
+  itemName: {
     type: String,
     unique: false,
     required: [true, "text is required"]
   },
+  itemDescription: {
+    type: Text,
+    required: [true, "text is required"]
+  },
+   
   createdAt: {
     type: Date,
     default: Date.now()
   }
 });
 
-const Todo = mongoose.model("Todo", todosSchema);
+const Want = mongoose.model("Want", wantsSchema);
 
-module.exports = Todo;
+module.exports = Want;
