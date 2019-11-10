@@ -12,7 +12,7 @@ const wantsSchema = new Schema({
     required: [true, "text is required"]
   },
   itemDescription: {
-    type: Text,
+    type: String,
     required: [true, "text is required"]
   },
    
