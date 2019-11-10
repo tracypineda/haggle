@@ -29,9 +29,13 @@ const usersSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  todos: [{
+  haves: [{
     type: Schema.Types.ObjectId,
-    ref: 'Todo'
+    ref: 'Have'
+  }],
+  wants: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Want'
   }]
 });
 
