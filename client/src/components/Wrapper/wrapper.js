@@ -1,12 +1,9 @@
 import React from "react"
-import "./Joke.scss";
+import "./Wrapper.scss";
 
-function Joke(props) {
-    return (
-        <div className="jokeBox">
-            <p>{props.joke}</p>
-        </div>
-    )
-}
+const Wrapper = props => <div className="wrapper">{props.children}
+      
+ </div>;
 
-export default Joke;
+
+export default Wrapper;

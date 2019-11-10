@@ -1,31 +1,51 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Auth from "./pages/Auth";
-import NoMatch from "./pages/NoMatch";
-import TopNav from "./components/TopNav";
-// import Footer from "./components/Footer";
-// import { Container } from 'reactstrap';
+import React { Component } from "react";
+import { BrowerRouter as Router, Route, Link} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/home";
+import Profile from "../components/profile";
+import barter from "../components/barter";
+import sign-up from "../components/sign-up";
 
-function App() {
+Class App extends Component {
+  render() {
   return (
-      <Router>
-        <>
-          <TopNav />
-          <Container>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
-              <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
-              <Route exact path="/profile" component={Profile} />
-              <Route component={NoMatch} />
-            </Switch>
-          </Container>
-          <Footer />
-        </>
-      </Router>
-  );
+    <Router>
+
+<div className="container">
+<div className="navbar navbar-expand-lg navbar-light bg-light">
+{/* <a className= "navbar-brand" */}
+<img src={women-in-red.jpg} height="30" weight="30" alt="hag lady" />
+<Link to="/" className="navbar-brand">The Haggle Hag Spot</Link>
+<div className="collapse nav-collaspe"> 
+  <ul className="navbar-nav mr-auto">
+    <li className="navabr-item">
+      <Link to="/" className="nav-link">Home</Link>
+      
+      </li>
+      <li className="navabr-item">
+      <Link to="/" className="nav-link">Sign-in</Link>
+      </li>
+      <li className="navabr-item">
+      <Link to="/" className="nav-link">Sign-up</Link>
+      
+      </li>
+      <li className="navabr-item">
+      <Link to="/" className="nav-link">Barter</Link>
+      
+      </li>
+      </ul>
+      </div>
+  </nav>
+<Route path= "/" exact component={Home} />
+<Route path = "/profile/:id" component={Profile} />
+<Route path = "/barter/:id" component={Barter} />
+<Route path = "/sign-up/:id" component={Sign-up} />
+</div>
+</Router>
+);
+
 }
 
-export default App;
+}
+
+export default App
