@@ -7,7 +7,8 @@ const routes = require("./routes");
 const session = require("express-session");
 const passport = require("passport");
 const logger = require("morgan");
-const flash = require('connect-flash');
+const flash = require("connect-flash");
+const nodeMailer = require("nodemailer");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,7 +23,9 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+// ----------------------------
+app.set('view engine', 'ejs'); //THIS IS FOR THE NODEMAILER  not sure this is correct....
+// ---------------------------------------------------------
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
