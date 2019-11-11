@@ -2,7 +2,16 @@ const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const haveRoutes = require("./haveRoutes");
 const wantRoutes = require("./wantRoutes");
+
+const DOCUMENT = require("../../models/Images");
+const multer = require("multer");
+const AWS = require("aws-sdk");
+
+// var storage = multer.memoryStorage();
+// var upload = multer.memoryStorage({storage: storage});
+
 const emailRoutes = require("./emailRoutes")
+
 
 
 //you need api before the routes//

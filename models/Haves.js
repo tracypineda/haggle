@@ -19,6 +19,10 @@ const havesSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now()
+  },
+  image: {
+    type: Blob,
+    
   }
 });
 
