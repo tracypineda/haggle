@@ -54,9 +54,10 @@ export default class TopNav extends Component {
 
     render() {
         return (
+           
             <div>
                 <Navbar className="navbar" light expand="md">
-                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-key"></i>Haggle Spot</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont"><i className=""></i>Haggle Spot</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -83,10 +84,13 @@ export default class TopNav extends Component {
                                     ) : (
                                         <>
                                             <DropdownItem>
-                                                <NavLink href="/login">login</NavLink>
+                                                <NavLink href="/login">Login</NavLink>
                                             </DropdownItem>
                                             <DropdownItem>
-                                                <NavLink href="/signup">signup</NavLink>
+                                                <NavLink href="/signup">Signup</NavLink>
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                <NavLink href="/profile">Profile</NavLink>
                                             </DropdownItem>
                                         </>
                                     )}

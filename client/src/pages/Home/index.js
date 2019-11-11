@@ -3,12 +3,13 @@ import { Button } from "reactstrap";
 import API from "../../utils/API";
 import Joke from "../../components/Joke/index.js"
 import "./Home.scss";
+// import Jumbotron from "../../components/Jumbotron"
 
 class Home extends Component {
 
   state = {
     loggedIn: false,
-    joke: ""
+    
   };
 
   componentDidMount() {
@@ -43,8 +44,10 @@ class Home extends Component {
   render() {
     return (
       <div className="homeBox">
+     <jumbotron>
         <h1>Welcome to The Haggle Hag Spot!</h1>
-        <Joke joke={this.state.joke}/>
+        </jumbotron> 
+        
         {this.state.loggedIn ? (
           <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}
