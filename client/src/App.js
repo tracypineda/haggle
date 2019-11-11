@@ -13,22 +13,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-      <Router>
-        <>
-          <TopNav />
-          <Container>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
-              <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/barter" component={Barter} />
-              <Route component={NoMatch} />
-            </Switch>
-          </Container>
-          <Footer />
-        </>
-      </Router>
+    <Router>
+      <div>
+        <TopNav />
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
+          <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/barter" component={Barter} />
+          <Route component={NoMatch} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 export default App;

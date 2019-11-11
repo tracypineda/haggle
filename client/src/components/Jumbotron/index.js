@@ -13,7 +13,7 @@ function Jumbotron() {
         </div> 
       </div>
        
-};
+  );
 }
 
 
