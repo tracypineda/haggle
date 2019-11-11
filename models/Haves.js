@@ -21,6 +21,7 @@ const havesSchema = new Schema({
     default: Date.now()
   },
   image: {
+    type: Blob,
     
   }
 });
