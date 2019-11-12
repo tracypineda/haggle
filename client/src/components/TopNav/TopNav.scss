@@ -13,6 +13,7 @@
     a.titleFont:hover {
         color: $light-text;
         font-weight: bold;
+        font-size: 150%;
     }
 
     a.nav-link {
@@ -21,6 +22,11 @@
 
     .light-text {
         color: $light-text
+    }
+
+    .fas fa-female {
+    margin: 10px;
+    
     }
 }
 
