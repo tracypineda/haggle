@@ -2,6 +2,8 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
+const havesController = require("../../controller/havesController");
+
 
 // /api/haves/all
 // get all haves from the signed in user
@@ -15,8 +17,9 @@ router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
 // add new have, update the user to have have id
 router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
     const newHave = new db.Have({
-        author: req.user._id,
-        have: req.body.have
+        user: req.user._id,
+        itemName: req.body.itemName,
+        itemDescription: req.body.itemDescription
     });
 
     newHave.save((err, newHave) => {
@@ -48,5 +51,9 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
         res.json(have);
     });
 });
+// matches with "/api/haves"
+router.route("/")
+.get(havesController.findAll);
+
 
 module.exports = router;
