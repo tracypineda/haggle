@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
-import Joke from "../../components/Joke/index.js"
+// import Joke from "../../components/Joke/index.js"
 import "./Home.scss";
-import Carousel from "../../components/Carousel";
+// import Carousel from "../../components/Carousel";
 // import Jumbotron from "../../components/Jumbotron"
 
 class Home extends Component {
@@ -18,17 +18,17 @@ class Home extends Component {
     this.loggedIn();
   }
 
-  getJoke = () => {
-    console.log("get goke function")
-    // API.ChuckNorris().then(joke => {
-    //   let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
-    //   this.setState({
-    //     joke: newJoke
-    //   })
-    // }).catch(err => {
-    //   console.log(err)
-    // });
-  }
+  // getJoke = () => {
+  //   console.log("get joke function")
+  //   API.ChuckNorris().then(joke => {
+  //     let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
+  //     this.setState({
+  //       joke: newJoke
+  //     })
+  //   }).catch(err => {
+  //     console.log(err)
+  //   });
+  // }
 
   loggedIn = () => {
     API.isLoggedIn().then(user => {

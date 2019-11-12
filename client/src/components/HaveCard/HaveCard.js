@@ -4,8 +4,10 @@ import {
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
+
+
 const HaveCard = (props) => {
-    console.log(props.title);
+    console.log("hello");
     console.log(children);
   return (
     <div>
@@ -13,9 +15,10 @@ const HaveCard = (props) => {
         <CardImg top width="100%" src="#" alt="Card image cap" />
         <CardBody>
   <CardTitle>{props.title}</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+  <CardSubtitle>{props.user}</CardSubtitle>
+          <CardText>{props.itemDescription}}</CardText>
+          <Button>Delete Item</Button>
+          <Button>Update Item</Button>
         </CardBody>
       </Card>
     </div>
