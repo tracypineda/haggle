@@ -1,15 +1,17 @@
 import React, {Component} from "react";
 import "./Profile.scss";
 import { Button } from "reactstrap";
-import { Link } from "react-router-dom"
-import API from "../../utils/API"
-
+import { Link } from "react-router-dom";
+import API from "../../utils/API";
+import { Input, TextArea, FormBtn } from "../../components/Form"
 
 class Profile extends Component {
     state = {
         loggedIn: false,
         user: null,
-        loading: true
+        loading: true,
+        itemName: "",
+        itemDescription: ""
     }
 
     componentDidMount() {
@@ -38,12 +40,63 @@ class Profile extends Component {
         }, 1000)  
     }
 
+    handleInputChange = event => { 
+        const { name, value} = event.target;
+        this.setState({
+          [name]: value
+        });
+    }
+
+        handleFormHaveSubmit = event => {
+            event.preventDefault();
+            if (this.state.itemName && this.state.itemDescription) {
+              API.createHaves({
+                itemName: this.state.itemName,
+                itemDescription: this.state.itemDescription
+              })
+              .then(res => this.getHaves())
+              .catch(err => console.log(err));
+            }
+          };    
+
+          handleFormWantSubmit = event => {
+            event.preventDefault();
+            if (this.state.itemName && this.state.itemDescription) {
+              API.createWants({
+                itemName: this.state.itemName,
+                itemDescription: this.state.itemDescription
+              })
+              .then(res => this.getWants())
+              .catch(err => console.log(err));
+            }
+          };  
+
+
     render() {
         return (
             <div className="profilePage">
                 {this.state.loggedIn ? (
                     <div className="profileBox">
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        <form>
+              <Input name="itemName" 
+              placeholder="ItemName (required)"
+              value= {this.state.itemName}
+              onChange= {this.handleInputChange} />
+              <TextArea name="itemDescription" 
+              placeholder="ItemDescription (Optional)"
+              value = {this.state.itemDescription} 
+              onChange = {this.handleInputChange}/>
+              <FormBtn id ="haveButton"
+              onClick = {this.handleFormHaveSubmit}
+              disabled = {!(this.state.itemName && this.state.itemDescription)}
+              >Submit Have</FormBtn>
+
+<FormBtn id="wantButton"
+              onClick = {this.handleFormWantSubmit}
+              disabled = {!(this.state.itemName && this.state.itemDescription)}
+              >Submit Want</FormBtn>
+            </form>
                     </div>
                 ) : (
                     <div className="noUser">

@@ -1,15 +1,29 @@
 import React, {Component} from "react";
 import "./Barter.scss";
 import { Button } from "reactstrap";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import API from '../Auth';
 
 class Barter extends Component {
     state = {
         loggedIn: false,
         user: null,
-        loading: true
+        loading: true,
+        itemName:"",
+        itemDescription:""
     }
+
+    componentDidMount() {
+        this.loadBooks();
+      }
+    
+      loadBooks = () => {
+        API.getBooks()
+          .then(res =>
+            this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+          )
+          .catch(err => console.log(err));
+      };
 
     componentDidMount() {
 
@@ -37,6 +51,7 @@ class Barter extends Component {
         }, 1000)  
     }
 
+
     render() {
         return (
             <div className="barterPage">
@@ -60,6 +75,5 @@ class Barter extends Component {
         )
     }
 }
-
 
 export default Barter;

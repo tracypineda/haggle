@@ -26,7 +26,22 @@ export default {
     return axios.get("/api/users/logout")
   },
 
-  // api that gets a random Chuck Norris Joke
+  getHaves: function(){
+    return axios.get("/api/haves")
+  },
+  createHaves: function(data){
+    return axios.post("/api/haves/new", data)
+
+  },
+
+  getWants: function(){
+    return axios.get("/api/wants")
+  },
+  createWants: function(data){
+    return axios.post("/api/wants/new", data)
+
+  }
+
 
 
 };

@@ -1,11 +1,10 @@
 import React from "react";
 import "./form.scss";
 
-
 export function Input(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props} />
+      <input className="form-control text-control"  {...props} />
     </div>
   );
 }
@@ -13,7 +12,7 @@ export function Input(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <textarea className="form-control text-control" rows="10" {...props} />
     </div>
   );
 }

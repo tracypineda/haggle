@@ -32,7 +32,18 @@
 
     .profileBox {
         #userTitle {
-            text-align: center
+            text-align: center,
         }
+        width: 70%;
+        margin-left: 10%;
+        margin-right: 10%;
+        
     }
+}
+#haveButton {
+    margin: 15px;
+    background-color: blueviolet;
+}  
+#wantButton {
+    margin: 15px;
 }
