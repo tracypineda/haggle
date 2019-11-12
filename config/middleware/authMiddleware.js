@@ -3,6 +3,7 @@ const auth = {
     // checks if the user is logged in, if not, redirect to the 
     // unauthorized route
     isLoggedIn: (req, res, next)=> {
+        console.log(req.body);
         if(req.isAuthenticated()){
             console.log('user authenticated');
             next();

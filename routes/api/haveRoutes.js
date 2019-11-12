@@ -26,7 +26,7 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
         if (err) throw err;
         db.User.findByIdAndUpdate(req.user.id, { $push: { haves: newHave._id } }, (err, user) => {
             if (err) throw err;
-            res.send(newHave, user);
+            res.send(newHave);
         });
     });
 });

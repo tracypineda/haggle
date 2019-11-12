@@ -13,20 +13,17 @@ class Barter extends Component {
         itemDescription:""
     }
 
-    componentDidMount() {
-        this.loadBooks();
-      }
-    
-      loadBooks = () => {
-        API.getBooks()
+   
+      loadHaves = () => {
+        API.getHaves()
           .then(res =>
-            this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+            this.setState({ haves: res.data, itemName: "", itemDescription: "" })
           )
           .catch(err => console.log(err));
       };
 
     componentDidMount() {
-
+        this.loadHaves();
         this.loading();
 
         API.isLoggedIn().then(user => {
@@ -58,6 +55,7 @@ class Barter extends Component {
                 {this.state.loggedIn ? (
                     <div className="barterBox">
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                        
                     </div>
                 ) : (
                     <div className="noUser">
