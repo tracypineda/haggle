@@ -43,6 +43,7 @@ class Home extends Component {
 
   render() {
     return (
+      <div className="background">
       <div className="homeBox">
      <jumbotron>
         <h1>Welcome to The Haggle Hag Spot!</h1>
@@ -51,6 +52,7 @@ class Home extends Component {
         {this.state.loggedIn ? (
           <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}
+      </div>
       </div>
     );
   }
