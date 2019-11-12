@@ -57,7 +57,11 @@ export default class TopNav extends Component {
            
             <div className= "backback">
                 <Navbar className="navbar" light expand="md">
+
                     <NavbarBrand href="/" className="titleFont"><i className="fas fa-female"></i>Haggle Spot</NavbarBrand>
+
+                   
+
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

@@ -2,6 +2,7 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
+const wantsController = require("../../controller/wantsController");
 
 // /api/wants/all
 // get all wants from the signed in user
@@ -15,15 +16,16 @@ router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
 // add new want, update the user to want want id
 router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
     const newWant = new db.Want({
-        author: req.user._id,
-        want: req.body.want
+        user: req.user._id,
+        itemName: req.body.itemName,
+        itemDescription: req.body.itemDescription
     });
 
     newWant.save((err, newWant) => {
         if (err) throw err;
         db.User.findByIdAndUpdate(req.user.id, { $push: { wants: newWant._id } }, (err, user) => {
             if (err) throw err;
-            res.send(newWant, user);
+            res.send(newWant);
         });
     });
 });
@@ -48,5 +50,8 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
         res.json(want);
     });
 });
+//api/want/
+router.route("/")
+.get(wantsController.findAll);
 
 module.exports = router;

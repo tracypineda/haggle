@@ -7,7 +7,7 @@ import Auth from "./pages/Auth";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
-import { Container } from 'reactstrap';
+// import { Container } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
