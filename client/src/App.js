@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Barter from "./pages/Barter";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Carousel from "./components/Carousel";
 import Auth from "./pages/Auth";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <div style={{ background:"rgb(245, 224, 224)"}}>
         <TopNav />
+       
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -25,7 +27,9 @@ function App() {
           <Route exact path="/barter" component={Barter} />
           <Route component={NoMatch} />
         </Switch>
-        <Footer />
+         <Carousel /> 
+       <Footer />
+      
       </div>
     </Router>
   );

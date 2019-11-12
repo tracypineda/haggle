@@ -47,3 +47,9 @@ class Barter extends Component {
     componentDidMount() {
         this.loadHaves();
         this.loading();
+
+    }
+    
+  }
+
+  export default Barter;
