@@ -1,7 +1,7 @@
 import React from "react";
 import "./jumbotron.scss";
 
-function Jumbotron() {
+function Jumbotron({children}) {
   return (
     <div className="container">
       <div className="jumbotron">

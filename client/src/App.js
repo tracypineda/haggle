@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Router>
-      <div>
+      <div style={{ background:"rgb(245, 224, 224)"}}>
         <TopNav />
 
         <Switch>

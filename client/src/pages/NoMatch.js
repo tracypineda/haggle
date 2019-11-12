@@ -4,7 +4,7 @@ function NoMatch() {
     return (
         <div className="notFound">
             <h1>404 Page Not Found</h1>
-            <img src="/assets/images/confused-travolta.gif" alt="confused Travolta" />
+            <img src="https://media2.giphy.com/media/l0NwQGfPV1EcKE3Xa/source.gif" alt="confused look" />
         </div>
     );
 }
