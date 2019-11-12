@@ -33,7 +33,6 @@ export default {
     return axios.post("/api/haves/new", data)
 
   },
-
   getWants: function(){
     return axios.get("/api/wants")
   },
@@ -41,7 +40,4 @@ export default {
     return axios.post("/api/wants/new", data)
 
   }
-
-
-
 };

@@ -14,7 +14,7 @@ findById: function(req, res){
     .then(dbWant => res.json (dbWant))
     .catch(err => res. status(422).json(err));
 },
-create: function(req,res){
+createWants: function(req,res){
     db.Want
     .create(req.body)
     .then(dbWant => res.json(dbWant))

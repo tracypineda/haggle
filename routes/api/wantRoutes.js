@@ -25,7 +25,7 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
         if (err) throw err;
         db.User.findByIdAndUpdate(req.user.id, { $push: { wants: newWant._id } }, (err, user) => {
             if (err) throw err;
-            res.send(newWant, user);
+            res.send(newWant);
         });
     });
 });
@@ -50,7 +50,7 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
         res.json(want);
     });
 });
-
+//api/want/
 router.route("/")
 .get(wantsController.findAll);
 
