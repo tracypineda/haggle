@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-// import HaveCard  from "../../components/HaveCard"
+import HaveCard  from "../../components/HaveCard"
 
 class Profile extends Component {
     state = {
@@ -99,7 +99,7 @@ class Profile extends Component {
                             >Submit Want</FormBtn>
                         </form>
 
-                        {/* <HaveCard title="prop test"> children test </HaveCard> */}
+                        <HaveCard title="prop test"> children test </HaveCard>
 
                     </div>
                 ) : (
