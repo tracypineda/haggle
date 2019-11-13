@@ -34,5 +34,5 @@ In this app it will use a Node and Express server that is backed my sequelized a
 | Passport              | for auth                |
 
 
-See on GitHub: 
+See on GitHub: <br>
 See on Heroku: 
