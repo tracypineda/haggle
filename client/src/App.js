@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/barter" component={Barter} />
           <Route component={NoMatch} />
         </Switch>
-         <Carousel />
+      
        <Footer />
       
       </div>

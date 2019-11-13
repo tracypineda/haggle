@@ -1,50 +1,50 @@
-@import "../../sass/variable.scss";
+// @import "../../sass/variable.scss";
 
-.carousel {
-    box-sizing: border box;
-    position: relative; 
-    width: 50%;
-    height: 50%;
-    max-height: -webkit-fill-available;
-
-}
-
-div {
-    display: block;
-    position: inherit;
-    max-height: -webkit-fill-available;
-}
-
-// .legend {
-// height: 30%;
+// .carousel {
+//     box-sizing: border box;
+//     position: relative; 
+//     width: 50%;
+//     height: 50%;
+//     max-height: -webkit-fill-available;
 
 // }
 
-.img {
-
-    height: 50%;
-}
-
-.carousel .slider-wrapper {
-    overflow: hidden;
-    margin: auto;
-    width: 50%;
-    -webkit-transition: height .8s ease-in;
-    transition: height .8s ease-in;
-}
-
-// .carousel .slide {
-//     margin: 0;
-//     padding: 0;
-//     position: fixed;
-//     list-style: none;
-//     width: 100%;
+// div {
+//     display: block;
+//     position: inherit;
+//     max-height: -webkit-fill-available;
 // }
 
-// .carousel .slider {
-//     margin: 0;
-//     padding: 0;
-//     position: fixed;
-//     list-style: none;
-//     width: 100%;
+// // .legend {
+// // height: 30%;
+
+// // }
+
+// .img {
+
+//     height: 50%;
 // }
+
+// .carousel .slider-wrapper {
+//     overflow: hidden;
+//     margin: auto;
+//     width: 50%;
+//     -webkit-transition: height .8s ease-in;
+//     transition: height .8s ease-in;
+// }
+
+// // .carousel .slide {
+// //     margin: 0;
+// //     padding: 0;
+// //     position: fixed;
+// //     list-style: none;
+// //     width: 100%;
+// // }
+
+// // .carousel .slider {
+// //     margin: 0;
+// //     padding: 0;
+// //     position: fixed;
+// //     list-style: none;
+// //     width: 100%;
+// // }
