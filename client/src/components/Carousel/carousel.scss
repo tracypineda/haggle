@@ -2,7 +2,7 @@
 
 .myCarousel {
     box-sizing: border box;
-    position: relative; 
+    position: absolute; 
     width: 50%;
     height: 50%;
     max-height: -webkit-fill-available;
@@ -15,10 +15,10 @@
 //     max-height: -webkit-fill-available;
 // }
 
-// // .legend {
-// // height: 30%;
+ .legend {
+height: 10%;
 
-// // }
+}
 
 // .img {
 
