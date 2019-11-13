@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-import HaveCard  from "../../components/HaveCard"
+// import HaveCard  from "../../components/HaveCard"
 
 class Profile extends Component {
     state = {
@@ -75,13 +75,21 @@ class Profile extends Component {
 
     render() {
         return (
+            
+               
             <div className="profilePage">
+                
                 {this.state.loggedIn ? (
+
+
+            
                     <div className="profileBox">
                         <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                       
+                       
                         <form>
                             <Input name="itemName"
-                                placeholder="ItemName (required)"
+                                 placeholder="ItemName (required)"
                                 value={this.state.itemName}
                                 onChange={this.handleInputChange} />
                             <TextArea name="itemDescription"
@@ -99,9 +107,10 @@ class Profile extends Component {
                             >Submit Want</FormBtn>
                         </form>
 
-                        <HaveCard title="prop test"> children test </HaveCard>
+                        {/* <HaveCard title="prop test"> children test </HaveCard> */}
 
                     </div>
+                    
                 ) : (
                         <div className="noUser">
                             {!this.state.loading ? (
@@ -110,11 +119,12 @@ class Profile extends Component {
                                     <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
                                 </>
                             ) : (
-                                    <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
+                                    <img id="loadingIcon" src="https://tenor.com/view/loading-bar-waiting-load-cyan-blue-gif-13956215" alt="loading" />
                                 )}
                         </div>
                     )}
             </div>
+           
         )
     }
 }
