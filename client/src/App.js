@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Router>
-      <div style={{ background:"rgb(245, 224, 224)"}}>
+      <div style={{ background:"#9486869a"}}>
         <TopNav />
        
 
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/barter" component={Barter} />
           <Route component={NoMatch} />
         </Switch>
-         <Carousel /> 
+      
        <Footer />
       
       </div>

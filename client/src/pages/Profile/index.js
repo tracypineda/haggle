@@ -110,7 +110,7 @@ class Profile extends Component {
                                     <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
                                 </>
                             ) : (
-                                    <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
+                                    <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
                                 )}
                         </div>
                     )}
