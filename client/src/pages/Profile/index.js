@@ -119,7 +119,9 @@ class Profile extends Component {
                                     <Link className="loginLink" to="/login"><Button className="loginBtn" color="info" block>Login</Button></Link>
                                 </>
                             ) : (
-                                    <img id="loadingIcon" src="https://tenor.com/view/loading-bar-waiting-load-cyan-blue-gif-13956215" alt="loading" />
+
+                                    <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
+
                                 )}
                         </div>
                     )}

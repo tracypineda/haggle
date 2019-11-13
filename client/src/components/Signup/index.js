@@ -29,7 +29,7 @@ class Signup extends Component {
     }
 
     validatePassword() {
-        let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
+        let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/);
         let valid = strongPassword.test(this.props.password);
         if (!this.state.validPassword && valid) {
             this.setState({

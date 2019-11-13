@@ -36,13 +36,20 @@ class Home extends Component {
     return (
       <div className="background">
         <div className="homeBox">
-          <jumbotron>
-            <h1>Welcome to The Haggle Hag Spot!</h1>
-          </jumbotron>
+
+        <jumbotron>
+          <h1>Welcome to the Haggle Hag Spot</h1>
+        </jumbotron>
+
+
+          {this.state.loggedIn ? (
+            <Button onClick={e => { this.getJoke() }} color="warning" block>Get New Joke</Button>
+          ) : (<></>)}
         </div>
+        <Carousel />
       </div>
       
-          
+
                 
     );
   }
