@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
-import Jumbotron from "../../components/Jumbotron";
+import {Col, Button, Jumbotron} from 'reactstrap';
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+import {Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import {Input, TextArea, FormBtn} from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
@@ -80,8 +76,8 @@ class Profile extends Component {
 
     loadHaves = () => {
         API.getHaves()
-            .then(res =>
-                this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" })
+            .then(res => console.log(res.data)(
+                this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" }))
             )
             .catch(err => console.log(err));
 
@@ -101,7 +97,7 @@ class Profile extends Component {
                 <Row>
                     {this.state.loggedIn ? (
                         <>
-                            <Col size="md-6">
+                            <Col md={6} >
                                 <div className="profilePage">
                                     <div className="profileBox">
                                         <Jumbotron>
@@ -128,7 +124,7 @@ class Profile extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col size="md-6 sm-12">
+                            <Col md ={6}>
                                 <Jumbotron>
                                     <h1>My Haves</h1>
                                 </Jumbotron>
@@ -147,7 +143,7 @@ class Profile extends Component {
                             </Col>
                         </>
                     ) : (
-                        <Col>
+                        <Col md ={12}>
                             <div className="noUser">
                                 {!this.state.loading ? (
                                     <>
