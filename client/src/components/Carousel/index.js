@@ -13,29 +13,30 @@ function MyCarousel() {
         return (
             <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img" src="https://i.pinimg.com/originals/ed/76/f7/ed76f7eef192e4a0b1fc66a3aa1f2c00.png" />
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img" src="https://i.pinimg.com/originals/ed/76/f7/ed76f7eef192e4a0b1fc66a3aa1f2c00.png" />
                     <p className="legend">Legend 2</p>
                 </div>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img" src="https://www.duffyduffylaw.com/wp-content/uploads/2018/05/user-placeholder-200x250.jpg" />
                     <p className="legend">Legend 3</p>
                 </div>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img"  src="https://www.duffyduffylaw.com/wp-content/uploads/2018/05/user-placeholder-200x250.jpg" />
                     <p className="legend">Legend 4</p>
                 </div>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img" src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
                     <p className="legend">Legend 5</p>
                 </div>
                 <div>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img className="img" src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
                     <p className="legend">Legend 6</p>
-                </div>
+                    </div>
+                
             </Carousel>
         );
     
