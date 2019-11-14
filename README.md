@@ -4,9 +4,9 @@
 ## Overview:
 In this app it will use a Node and Express server that is backed my sequelized and MySQL. It  uses CRUD routes for retrieving and adding data from the backend to the frontend and vis versa. The app will meet basic MVC standards. The final product will be visiable on Heroku.
 
-* **Developers: Tracy Pineda, and April Long
-* **Institute: University of Denver
-* **Date Published: November 18, 2019
+* **Developers:** Tracy Pineda, and April Long
+* **Institute:** University of Denver
+* **Date Published:** November 18, 2019
 
 
 
