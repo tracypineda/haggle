@@ -2,10 +2,17 @@
 
     #haveButton {
         margin: 20px;
-        background-color: blueviolet;
+        // background-color: blueviolet;
+        color: $dark-text;
+        
     }  
     #wantButton {
         margin: 20px;
+        color: $dark-text; 
+        :hover {
+            color: $light-text;
+            
+        }
     }
 
 .profilePage {
