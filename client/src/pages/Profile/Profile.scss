@@ -1,5 +1,13 @@
 @import "../../sass/variable.scss";
 
+    #haveButton {
+        margin: 20px;
+        background-color: blueviolet;
+    }  
+    #wantButton {
+        margin: 20px;
+    }
+
 .profilePage {
     margin: 0 auto;
     margin-top: 25px;
@@ -39,11 +47,4 @@
         margin-right: 10%;
         
     }
-}
-#haveButton {
-    margin: 15px;
-    background-color: blueviolet;
-}  
-#wantButton {
-    margin: 15px;
 }

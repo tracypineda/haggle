@@ -36,8 +36,18 @@ export default {
   getWants: function(){
     return axios.get("/api/wants")
   },
-  createWants: function(data){
+  createWant: function(data){
     return axios.post("/api/wants/new", data)
 
-  }
+  },
+  // Deletes the haves with the given id
+  deleteHave: function(id) {
+    return axios.delete("/api/haves/" + id);
+  },
+
+  // Deletes the wants with the given id
+  deleteWants: function(id) {
+    return axios.delete("/api/wants/" + id);
+  },
+
 };

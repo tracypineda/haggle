@@ -19,9 +19,9 @@ class Barter extends Component {
   }
   componentDidMount() {
     API.getHaves()
-    .then(res => console.log(res.data)(
-      this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" })
-      ))
+    .then(res => 
+      this.setState({ haves: res.data, itemName: "", itemDescription: "", user: ""})
+      )
       .catch(err => console.log(err));
   };
 
@@ -36,8 +36,8 @@ class Barter extends Component {
           {this.state.haves.length ? (
             <List>
               {this.state.haves.map(have => (
-                <ListItem key={have._id}>
-                  <strong>{have.itemName} haggled by {have.user}</strong>
+                <ListItem key= {have._id}>
+                  <strong> Item Name: {have.itemName} Item Description: {have.itemDescription} haggled by; {have.user}</strong>
                   <Button onClick={() => this.deleteHave(have._id)} />
                 </ListItem>
               ))}

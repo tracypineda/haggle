@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Col, Button, Jumbotron} from 'reactstrap';
+import { Col, Button, Jumbotron } from 'reactstrap';
 import { Link } from "react-router-dom";
-import {Row, Container } from "../../components/Grid";
+import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import {Input, TextArea, FormBtn} from "../../components/Form";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API"
 
@@ -20,6 +20,7 @@ class Profile extends Component {
 
         this.loading();
         this.loadHaves();
+        this.loadWants();
 
         API.isLoggedIn().then(user => {
             if (user.data.loggedIn) {
@@ -76,8 +77,17 @@ class Profile extends Component {
 
     loadHaves = () => {
         API.getHaves()
-            .then(res => console.log(res.data)(
-                this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" }))
+            .then(res =>
+                this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" })
+            )
+            .catch(err => console.log(err));
+
+    };
+
+    loadWants = () => {
+        API.getWants()
+            .then(res =>
+                this.setState({ wants: res.data, itemName: "", itemDescription: "", user: "" })
             )
             .catch(err => console.log(err));
 
@@ -90,6 +100,13 @@ class Profile extends Component {
 
     };
 
+    deleteWant = id => {
+        API.deleteWant(id)
+            .then(res => this.loadWants())
+            .catch(err => console.log(err));
+
+    };
+
 
     render() {
         return (
@@ -97,7 +114,7 @@ class Profile extends Component {
                 <Row>
                     {this.state.loggedIn ? (
                         <>
-                            <Col md={6} >
+                            <Col md={4} >
                                 <div className="profilePage">
                                     <div className="profileBox">
                                         <Jumbotron>
@@ -124,7 +141,8 @@ class Profile extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col md ={6}>
+                            
+                            <Col md={4}>
                                 <Jumbotron>
                                     <h1>My Haves</h1>
                                 </Jumbotron>
@@ -138,31 +156,49 @@ class Profile extends Component {
                                         ))}
                                     </List>
                                 ) : (
-                                    <h3>No Results to Display</h3>
-                                )}
+                                        <h3>No Results to Display</h3>
+                                    )}
+                            </Col>
+
+                            <Col md={4}>
+                                <Jumbotron>
+                                    <h1>My Wants</h1>
+                                </Jumbotron>
+                                {this.state.wants.length ? (
+                                    <List>
+                                        {this.state.wants.map(want => (
+                                            <ListItem key={want._id}>
+                                                <strong>{want.itemName} wanted by {want.user}</strong>
+                                                <DeleteBtn onClick={() => this.deleteWant(want._id)} />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                ) : (
+                                        <h3>No Results to Display</h3>
+                                    )}
                             </Col>
                         </>
                     ) : (
-                        <Col md ={12}>
-                            <div className="noUser">
-                                {!this.state.loading ? (
-                                    <>
-                                        <h1>please log in</h1>
-                                        <Link className="loginLink" to="/login">
-                                            <Button className="loginBtn" color="info" block>Login</Button>
-                                        </Link>
-                                    </>
+                            <Col md={12}>
+                                <div className="noUser">
+                                    {!this.state.loading ? (
+                                        <>
+                                            <h1>please log in</h1>
+                                            <Link className="loginLink" to="/login">
+                                                <Button className="loginBtn" color="info" block>Login</Button>
+                                            </Link>
+                                        </>
 
-                                ) : (
-                                        <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
-                                    )}
-                            </div>
-                        </Col>
-                    )}
+                                    ) : (
+                                            <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
+                                        )}
+                                </div>
+                            </Col>
+                        )}
                 </Row >
             </Container >
         )
     }
 }
 
-    export default Profile;
+export default Profile;
