@@ -21,18 +21,19 @@ class Profile extends Component {
         this.loading();
         this.loadHaves();
         this.loadWants();
-
+        
         API.isLoggedIn().then(user => {
             if (user.data.loggedIn) {
                 this.setState({
                     loggedIn: true,
                     user: user.data.user
                 });
+                console.log("userinformation", this.state.user)
             }
         }).catch(err => {
             console.log(err);
         });
-
+        
         console.log(this.props)
     }
 
@@ -77,8 +78,11 @@ class Profile extends Component {
 
     loadHaves = () => {
         API.getHaves()
-            .then(res =>
-                this.setState({ haves: res.data, itemName: "", itemDescription: "", user: "" })
+            .then(res => {
+
+                    console.log("getHaves", res.data)
+            
+                this.setState({ haves: res.data, itemName: "", itemDescription: ""}) }
             )
             .catch(err => console.log(err));
 
@@ -87,7 +91,7 @@ class Profile extends Component {
     loadWants = () => {
         API.getWants()
             .then(res =>
-                this.setState({ wants: res.data, itemName: "", itemDescription: "", user: "" })
+                this.setState({ wants: res.data, itemName: "", itemDescription: ""})
             )
             .catch(err => console.log(err));
 
@@ -150,7 +154,7 @@ class Profile extends Component {
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
-                                                <strong>{have.itemName} haggled by {have.user}</strong>
+                                                <strong>{have.itemName} haggled by {this.state.user.username}</strong>
                                                 <DeleteBtn onClick={() => this.deleteHave(have._id)} />
                                             </ListItem>
                                         ))}
@@ -168,7 +172,7 @@ class Profile extends Component {
                                     <List>
                                         {this.state.wants.map(want => (
                                             <ListItem key={want._id}>
-                                                <strong>{want.itemName} wanted by {want.user}</strong>
+                                                <strong>{want.itemName} wanted by {this.state.user.username}</strong>
                                                 <DeleteBtn onClick={() => this.deleteWant(want._id)} />
                                             </ListItem>
                                         ))}

@@ -8,6 +8,24 @@ findAll: function (req, res) {
         .then(dbWant => res.json(dbWant))
         .catch(err => res.status(422).json(err));
 },
+// findHavesByUser: function (req, res){
+//     db.Have
+//     .find (req.query)
+//     .sort({createdAt: -1})
+//     .then()
+//     .catch(err => res.status(422).json(err));
+
+//     db.User
+// },
+// findWantsByUser: function (req, res){
+//     db.Want
+//     .find (req.query)
+//     .sort({createdAt: -1})
+//     .then()
+//     .catch(err => res.status(422).json(err));
+//     db.User
+// },
+
 findById: function(req, res){
     db.Want
     .findById(req.params.id)
