@@ -29,6 +29,13 @@ export default {
   getHaves: function(){
     return axios.get("/api/haves")
   },
+
+  getHavesById: function(id){
+    return axios.get("/api/haves/" + id)
+  },
+  getWantsById: function(id){
+    return axios.get("/api/wants/" + id)
+  },
   createHaves: function(data){
     return axios.post("/api/haves/new", data)
 

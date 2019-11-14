@@ -8,7 +8,8 @@ const havesController = require("../../controller/havesController");
 // /api/haves/all
 // get all haves from the signed in user
 router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.Have.find({ author: req.user.id }, (err, haves) => {
+    console.log(req.user)
+    db.Have.find({ owner: req.user.id }, (err, haves) => {
         res.json(haves);
     });
 });

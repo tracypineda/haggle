@@ -7,7 +7,7 @@ const wantsController = require("../../controller/wantsController");
 // /api/wants/all
 // get all wants from the signed in user
 router.get("/all", authMiddleware.isLoggedIn, function (req, res, next) {
-    db.Want.find({ author: req.user.id }, (err, wants) => {
+    db.Want.find({ owner: req.user.id }, (err, wants) => {
         res.json(wants);
     });
 });

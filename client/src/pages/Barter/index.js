@@ -20,7 +20,7 @@ class Barter extends Component {
   componentDidMount() {
     API.getHaves()
     .then(res => 
-      this.setState({ haves: res.data, itemName: "", itemDescription: "", user: ""})
+      this.setState({ haves: res.data, itemName: "", itemDescription: ""})
       )
       .catch(err => console.log(err));
   };
