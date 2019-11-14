@@ -23,6 +23,7 @@ class Barter extends Component {
       this.setState({ haves: res.data, itemName: "", itemDescription: ""})
       )
       .catch(err => console.log(err));
+      console.log("username", this.state);
   };
 
 
