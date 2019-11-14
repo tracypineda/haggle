@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Barter from "./pages/Barter";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Carousel from "./components/Carousel";
+// import Carousel from "./components/Carousel";
 import Auth from "./pages/Auth";
 import NoMatch from "./pages/NoMatch";
 import TopNav from "./components/TopNav";
