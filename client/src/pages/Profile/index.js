@@ -55,9 +55,11 @@ class Profile extends Component {
     handleFormHaveSubmit = event => {
         event.preventDefault();
         if (this.state.itemName && this.state.itemDescription) {
+            console.log(this.state.user.username)
             API.createHaves({
                 itemName: this.state.itemName,
-                itemDescription: this.state.itemDescription
+                itemDescription: this.state.itemDescription,
+                user: this.state.user.username
             })
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
@@ -67,9 +69,11 @@ class Profile extends Component {
     handleFormWantSubmit = event => {
         event.preventDefault();
         if (this.state.itemName && this.state.itemDescription) {
+            console.log(this.state.user.username)
             API.createWants({
                 itemName: this.state.itemName,
-                itemDescription: this.state.itemDescription
+                itemDescription: this.state.itemDescription,
+                user: this.state.user.username
             })
                 .then(res => API.getWants())
                 .catch(err => console.log(err));
@@ -104,7 +108,7 @@ class Profile extends Component {
 
     };
 
-    deleteWant = id => {
+    deleteWants = id => {
         API.deleteWant(id)
             .then(res => this.loadWants())
             .catch(err => console.log(err));
@@ -154,7 +158,7 @@ class Profile extends Component {
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
-                                                <strong>{have.itemName} haggled by {this.state.user.username}</strong>
+                                                <strong>{have.itemName} haggled by {have.user}</strong>
                                                 <DeleteBtn onClick={() => this.deleteHave(have._id)} />
                                             </ListItem>
                                         ))}
@@ -172,7 +176,7 @@ class Profile extends Component {
                                     <List>
                                         {this.state.wants.map(want => (
                                             <ListItem key={want._id}>
-                                                <strong>{want.itemName} wanted by {this.state.user.username}</strong>
+                                                <strong>{want.itemName} wanted by {want.user}</strong>
                                                 <DeleteBtn onClick={() => this.deleteWant(want._id)} />
                                             </ListItem>
                                         ))}
