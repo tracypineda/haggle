@@ -11,21 +11,46 @@ import { Row, Container } from "../../components/Grid";
 // import Email from "../../components/Email";
 
 class Barter extends Component {
-    state = {
-        loggedIn: false,
-        user: null,
-        wants: [],
-        haves: [],
-        itemName: "",
-        itemDescription: ""
-    }
-    componentDidMount() {
-        API.getHaves()
-            .then(res =>
-                this.setState({ haves: res.data, itemName: "", itemDescription: "" })
-            )
-            .catch(err => console.log(err));
-    };
+
+  state = {
+    loggedIn: false,
+    user: null,
+    wants: [],
+    haves: [],
+    itemName: "",
+    itemDescription: ""
+  }
+  componentDidMount() {
+    API.getHaves()
+    .then(res => 
+      this.setState({ haves: res.data, itemName: "", itemDescription: ""})
+      )
+      .catch(err => console.log(err));
+      console.log("username", this.state);
+  };
+
+
+  render() {
+    return (
+      <>
+        <Col md ={12}>
+          <Jumbotron>
+            <h1>Items Up For Haggle... </h1>
+          </Jumbotron>
+          {this.state.haves.length ? (
+            <List>
+              {this.state.haves.map(have => (
+                <ListItem key= {have._id}>
+                  <strong> Item Name: {have.itemName} Item Description: {have.itemDescription} haggled by; {have.user}</strong>
+                  <Button onClick={() => this.deleteHave(have._id)} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Col>
+
 
 
     render() {
