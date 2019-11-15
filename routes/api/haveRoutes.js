@@ -23,13 +23,21 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
         itemDescription: req.body.itemDescription
     });
 
-    newHave.save((err, newHave) => {
+// creating an new have to the database
+router.post(havesController.create);
+
+router.route("/:id")
+    .get(havesController.findById)
+    .put(havesController.update)
+    .delete(havesController.remove);
+
+newHave.save((err, newHave) => {
+    if (err) throw err;
+    db.User.findByIdAndUpdate(req.user.id, { $push: { haves: newHave._id } }, (err, user) => {
         if (err) throw err;
-        db.User.findByIdAndUpdate(req.user.id, { $push: { haves: newHave._id } }, (err, user) => {
-            if (err) throw err;
-            res.send(newHave);
-        });
+        res.send(newHave);
     });
+});
 });
 
 // /api/haves/remove
@@ -54,7 +62,7 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
 });
 // matches with "/api/haves"
 router.route("/")
-.get(havesController.findAll);
+    .get(havesController.findAll);
 
 
 module.exports = router;

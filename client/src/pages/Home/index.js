@@ -14,7 +14,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    
+
     this.loggedIn();
   }
 
@@ -37,23 +37,18 @@ class Home extends Component {
       <div className="background">
         <div className="homeBox">
 
-        <jumbotron>
+
           <h1>Welcome to the Haggle Hag Spot</h1>
-        </jumbotron>
 
-
-          {this.state.loggedIn ? (
-            <Button onClick={e => { this.getJoke() }} color="warning" block>Get New Joke</Button>
-          ) : (<></>)}
         </div>
         <Carousel />
       </div>
-      
 
-                
+
+
     );
+
   }
 }
-
 
 export default Home;
