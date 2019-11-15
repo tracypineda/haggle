@@ -19,20 +19,24 @@ class Profile extends Component {
     componentDidMount() {
 
         this.loading();
-        this.loadHaves();
-        this.loadWants();
         
-        API.isLoggedIn().then(user => {
-            if (user.data.loggedIn) {
-                this.setState({
-                    loggedIn: true,
-                    user: user.data.user
-                });
-                console.log("userinformation", this.state.user)
-            }
-        }).catch(err => {
-            console.log(err);
-        });
+        API.isLoggedIn()
+            .then(user => {
+                if (user.data.loggedIn) {
+                    this.setState({
+                        loggedIn: true,
+                        user: user.data.user
+                    });
+                    console.log("userinformation", this.state.user)
+                }
+                return user;
+            })
+            .then(response => this.loadWants(response.data.user._id))
+            .catch(err => {
+                console.log(err);
+            });
+        this.loadHaves();
+       
         
         console.log(this.props)
     }
@@ -92,8 +96,8 @@ class Profile extends Component {
 
     };
 
-    loadWants = () => {
-        API.getWants()
+    loadWants = (id) => {
+        API.getUserWants(id)
             .then(res =>
                 this.setState({ wants: res.data, itemName: "", itemDescription: ""})
             )

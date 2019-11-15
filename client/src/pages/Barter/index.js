@@ -21,7 +21,7 @@ class Barter extends Component {
     itemDescription: ""
   }
   componentDidMount() {
-    API.getHaves()
+    API.getWants()
     .then(res => 
       this.setState({ haves: res.data, itemName: "", itemDescription: ""})
       )
