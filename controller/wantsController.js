@@ -8,20 +8,16 @@ module.exports = {
             .then(dbWant => res.json(dbWant))
             .catch(err => res.status(422).json(err));
     },
-    // findWantsByUser: function (req, res) {
-    //     db.Want.aggregate({
-    //         $lookup: {
-    //             from: "User",
-    //             localField: "id",
-    //             foreignField: "id",
-    //             as: "users_wants"
-    //         }
-    //     })
-    //         .find(req.query)
-    //         .sort({ createdAt: -1 })
-    //         .then()
-    //         .catch(err => res.status(422).json(err));
-    // },
+    getUserWants: function (req, res) {
+        console.log(req.params.id)
+        db.User 
+            .findById(req.params.id)
+            .then(dbWant => {
+                console.log(dbWant)
+                res.json(dbWant)
+            })
+            .catch(err => res.status(422).json(err));
+    },
     findById: function (req, res) {
         db.Want
             .findById(req.params.id)

@@ -50,6 +50,8 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
         res.json(want);
     });
 });
+
+
 //api/want/
 router.route("/")
 .get(wantsController.findAll);

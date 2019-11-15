@@ -2,6 +2,7 @@ const router = require("express").Router();
 const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
+const wantsController = require("../../controller/wantsController");
 
 // /api/users/login
 // route to login the user
@@ -87,5 +88,12 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
     res.json(err);
   });
 });
+
+// api/user/:id
+// api/user/12345
+// req.params.id = 12345
+router
+  .route("/:id")
+  .get(wantsController.getUserWants)
 
 module.exports = router;

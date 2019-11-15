@@ -40,6 +40,10 @@ export default {
     return axios.post("/api/haves/new", data)
 
   },
+
+  getUserWants: function (id) {
+    return axios.get(`/api/users/${id}`)
+  },
   getWants: function(){
     return axios.get("/api/wants")
   },
