@@ -10,8 +10,8 @@ class MyCarousel extends Component {
     render() {
         return (
             <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem}>
-                <div style={{height: "200px", width: "2000px"}}>
-                    <img src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                <div style={{height: "100px", width: "2000px"}}>
+                    <img src="httphttps://www.dhresource.com/0x0/f2/albu/g6/M00/31/50/rBVaR1qenv6AVJrUAAPQJ8FylfM514.jpgs://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
                     <p className="legend" >**Featured Haggles**</p>
                 </div>
                 <div style={{height:"200px", width: "2000px"}}>

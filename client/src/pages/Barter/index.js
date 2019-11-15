@@ -30,29 +30,6 @@ class Barter extends Component {
   };
 
 
-  render() {
-    return (
-      <>
-        <Col md ={12}>
-          <Jumbotron>
-            <h1>Items Up For Haggle... </h1>
-          </Jumbotron>
-          {this.state.haves.length ? (
-            <List>
-              {this.state.haves.map(have => (
-                <ListItem key= {have._id}>
-                  <strong> Item Name: {have.itemName} Item Description: {have.itemDescription} haggled by; {have.user}</strong>
-                  <Button onClick={() => this.deleteHave(have._id)} />
-                </ListItem>
-              ))}
-            </List>
-          ) : (
-              <h3>No Results to Display</h3>
-            )}
-        </Col>
-
-
-
     render() {
         return (
             <Container fluid>
@@ -84,13 +61,16 @@ class Barter extends Component {
                                         <h1>Email the Haggler...</h1>
                                     </Jumbotron>
                                     <Email>
-                                        <h3> coming soon</h3>
+                                        <h3> Make Contact</h3>
+                                        {/* <img src= "https://blog.addthiscdn.com/wp-content/uploads/sites/3/2019/03/19121735/AddThis-Email-Share-Service.png" /> */}
+                                        
                                     </Email>
                                 </>
                             ) : null}
                         </Col>
                     
                 </Row>
+                
                 <Row>
                     <Col md={8}>
                         <div className="noUser">
