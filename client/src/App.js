@@ -17,7 +17,7 @@ import { ENAMETOOLONG } from "constants";
 function App() {
   return (
     <Router>
-      <div style={{ background:"#9486869a"}}>
+      <div style={{ background:"#9486869a", height: "100vh"}}>
         <TopNav />
        
 

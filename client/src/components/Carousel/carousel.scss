@@ -15,9 +15,16 @@
 //     max-height: -webkit-fill-available;
 // }
 
- .legend {
-height: 10px;
+ .carousel .thumb {
+height: 80px;
+width: 100px;
 
+}
+
+.carousel {
+    // width: 1355px !important;
+    // height: 200px; 
+    align-content: center;
 }
 
 // .img {
