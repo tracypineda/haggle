@@ -53,7 +53,7 @@ export default {
   },
 
   // Deletes the wants with the given id
-  deleteWants: function(id) {
+  deleteWant: function(id) {
     return axios.delete("/api/wants/" + id);
   },
 

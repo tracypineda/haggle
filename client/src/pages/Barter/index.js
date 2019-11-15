@@ -74,7 +74,7 @@ class Barter extends Component {
                 <Row>
                     <Col md={8}>
                         <div className="noUser">
-                            {!this.state.loading ? (
+                            {!this.state.loading && this.state.loggedIn ? (
                                 <>
                                     <h1>please log in</h1>
                                     <Link className="loginLink" to="/login">

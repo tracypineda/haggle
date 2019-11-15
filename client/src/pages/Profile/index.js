@@ -9,7 +9,7 @@ import API from "../../utils/API"
 
 class Profile extends Component {
     state = {
-        isLoggedIn: false,
+        loggedIn: false,
         user: null,
         loading: true,
         itemName: "",
@@ -154,7 +154,7 @@ class Profile extends Component {
                                 <Jumbotron>
                                     <h1>My Haves</h1>
                                 </Jumbotron>
-                                {this.state.haves.length ? (
+                                {this.state.haves ? (
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
@@ -172,12 +172,12 @@ class Profile extends Component {
                                 <Jumbotron>
                                     <h1>My Wants</h1>
                                 </Jumbotron>
-                                {this.state.wants.length ? (
+                                {this.state.wants ? (
                                     <List>
                                         {this.state.wants.map(want => (
                                             <ListItem key={want._id}>
                                                 <strong>{want.itemName} wanted by {want.user}</strong>
-                                                <DeleteBtn onClick={() => this.deleteWant(want._id)} />
+                                                <DeleteBtn onClick={() => this.deleteWants(want._id)} />
                                             </ListItem>
                                         ))}
                                     </List>
@@ -198,7 +198,7 @@ class Profile extends Component {
                                         </>
 
                                     ) : (
-                                            <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
+                                            <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading"/>
                                         )}
                                 </div>
                             </Col>

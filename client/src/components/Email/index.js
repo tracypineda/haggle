@@ -4,6 +4,7 @@ import { Email, Item, Span, A, Box, renderEmail } from "react-html-email"
 import { brotliDecompress } from "zlib";
 
 const emailHTML = renderEmail (
+  
     <div className= "email">
     <Email title="Email Testing">
       <Item align= "center">
@@ -20,6 +21,7 @@ const emailHTML = renderEmail (
     </Email>
     </div>
   )
+
 //   const emailHTML = renderEmail (
 //     <div className= "email">
 //     <Email title="Hello World!">
