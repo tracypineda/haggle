@@ -35,9 +35,9 @@ class Home extends Component {
   render() {
     return (
       <div className="background">
-        {/* <div className="homeBox"></div> */}
-
-          <h1>Welcome to the Haggle Hag Spot</h1>
+{/* 
+        <div className="homeBox"></div>
+          <h1>Welcome to the Haggle Hag Spot</h1> */}
           
           <Carousel />
       </div>

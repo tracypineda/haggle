@@ -58,7 +58,7 @@ export default class TopNav extends Component {
             <div className= "backback">
                 <Navbar className="navbar" light expand="md">
 
-                    <NavbarBrand href="/" className="titleFont"><i className="fas fa-female"></i>Haggle Spot</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont">Haggle Spot</NavbarBrand>
 
                    
 
