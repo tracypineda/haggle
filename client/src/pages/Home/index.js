@@ -36,10 +36,13 @@ class Home extends Component {
     return (
       <div className="background">
         {/* <div className="homeBox"></div> */}
-          <h1>Welcome to the Haggle Hag Spot</h1>
-        <Carousel />
-      </div>
 
+          <h1>Welcome to the Haggle Hag Spot</h1>
+          
+          <Carousel />
+      </div>
+    
+       
 
 
     );

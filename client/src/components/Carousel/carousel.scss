@@ -1,23 +1,16 @@
 @import "../../sass/variable.scss";
 
-// .myCarousel {
-//     box-sizing: border box;
-//     position: absolute; 
-//     width: 50%;
-//     height: 50%;
-//     max-height: -webkit-fill-available;
+.legend {
+    height: 65px;
+    font-family: 'Kalam', cursive;
+}
 
-// }
 
-// div {
-//     display: block;
-//     position: inherit;
-//     max-height: -webkit-fill-available;
-// }
 
  .carousel .thumb {
 height: 80px;
 width: 100px;
+font-size: 50px;
 
 }
 
@@ -25,33 +18,7 @@ width: 100px;
     // width: 1355px !important;
     // height: 200px; 
     align-content: center;
+    font-size: 25%;
+    font-family: 'Kaushan Script', cursive;
 }
 
-// .img {
-
-//     height: 50%;
-// }
-
-// .carousel .slider-wrapper {
-//     overflow: hidden;
-//     margin: auto;
-//     width: 50%;
-//     -webkit-transition: height .8s ease-in;
-//     transition: height .8s ease-in;
-// }
-
-// // .carousel .slide {
-// //     margin: 0;
-// //     padding: 0;
-// //     position: fixed;
-// //     list-style: none;
-// //     width: 100%;
-// // }
-
-// // .carousel .slider {
-// //     margin: 0;
-// //     padding: 0;
-// //     position: fixed;
-// //     list-style: none;
-// //     width: 100%;
-// // }
