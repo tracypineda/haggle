@@ -19,7 +19,7 @@ class Profile extends Component {
     componentDidMount() {
 
         this.loading();
-        
+
         API.isLoggedIn()
             .then(user => {
                 if (user.data.loggedIn) {
@@ -29,15 +29,22 @@ class Profile extends Component {
                     });
                     console.log("userinformation", this.state.user)
                 }
-                return user;
+                // return user;
             })
-            .then(response => this.loadWants(response.data.user._id))
+            .then(response => {
+                console.log("Calling API WANTS - Profile", this.state.user.username)
+                this.loadWants(this.state.user.username)
+            })
+            .then(response => {
+                console.log("calling API HAVES - Profile",
+                    this.state.user.username)
+                this.loadHaves(this.state.user.username)
+            })
             .catch(err => {
                 console.log(err);
             });
-        this.loadHaves();
-       
-        
+
+
         console.log(this.props)
     }
 
@@ -84,22 +91,24 @@ class Profile extends Component {
         }
     };
 
-    loadHaves = () => {
-        API.getHaves()
+    loadHaves = (username) => {
+        API.getUserHaves(username)
             .then(res => {
 
-                    console.log("getHaves", res.data)
-            
-                this.setState({ haves: res.data, itemName: "", itemDescription: ""}) }
+                console.log("getHaves", res.data)
+
+                this.setState({ haves: res.data, itemName: "", itemDescription: "" })
+            }
             )
             .catch(err => console.log(err));
 
     };
 
-    loadWants = (id) => {
-        API.getUserWants(id)
+    loadWants = (username) => {
+        console.log("api getUserWants", username)
+        API.getUserWants(username)
             .then(res =>
-                this.setState({ wants: res.data, itemName: "", itemDescription: ""})
+                this.setState({ wants: res.data, itemName: "", itemDescription: "" })
             )
             .catch(err => console.log(err));
 
@@ -153,7 +162,7 @@ class Profile extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            
+
                             <Col md={4}>
                                 <Jumbotron>
                                     <h1>My Haves</h1>
@@ -202,7 +211,7 @@ class Profile extends Component {
                                         </>
 
                                     ) : (
-                                            <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading"/>
+                                            <img id="loadingIcon" src="./assets/images/loading.gif" alt="loading" />
                                         )}
                                 </div>
                             </Col>
