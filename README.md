@@ -37,6 +37,6 @@ In this app it will use a Node and Express server that is backed my sequelized a
 
 
 
-See on GitHub: 
-See on Heroku: 
+See on GitHub: [https://tracypineda.github.io/haggle/]
+See on Heroku: [https://powerful-retreat-89319.herokuapp.com/]
 
