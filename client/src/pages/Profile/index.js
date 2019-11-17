@@ -13,12 +13,15 @@ class Profile extends Component {
         user: null,
         loading: true,
         itemName: "",
-        itemDescription: ""
+        itemDescription: "",
+        userName: ""
     }
 
     componentDidMount() {
 
         this.loading();
+        this.loadHaves();
+        this.loadWants();
 
         API.isLoggedIn()
             .then(user => {
@@ -29,17 +32,15 @@ class Profile extends Component {
                     });
                     console.log("userinformation", this.state.user)
                 }
-                // return user;
             })
-            .then(response => {
-                console.log("Calling API WANTS - Profile", this.state.user.username)
-                this.loadWants(this.state.user.username)
-            })
-            .then(response => {
-                console.log("calling API HAVES - Profile",
-                    this.state.user.username)
-                this.loadHaves(this.state.user.username)
-            })
+            // .then(response => {
+            //     console.log("Calling API WANTS - Profile", this.state.user.username)
+            //     this.loadWants(this.state.user.username)
+            // })
+            // .then(response => {
+            //     console.log("calling API HAVES - Profile", this.state.user.username)
+            //     this.loadHaves(this.state.user.username)
+            // })
             .catch(err => {
                 console.log(err);
             });
@@ -70,7 +71,8 @@ class Profile extends Component {
             API.createHaves({
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
-                user: this.state.user.username
+                user: this.state.user.username,
+                userName: this.state.userName
             })
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
@@ -84,29 +86,29 @@ class Profile extends Component {
             API.createWants({
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
-                user: this.state.user.username
+                user: this.state.user.username,
+                userName: this.state.userName
             })
                 .then(res => API.getWants())
                 .catch(err => console.log(err));
         }
     };
 
-    loadHaves = (username) => {
-        API.getUserHaves(username)
+    loadHaves = () => {
+        API.getHaves()
             .then(res => {
 
-                console.log("getHaves", res.data)
-
                 this.setState({ haves: res.data, itemName: "", itemDescription: "" })
-            }
-            )
+                console.log("getHaves", res.data)
+                // console.log("userinfo", username)
+            })
             .catch(err => console.log(err));
 
     };
 
-    loadWants = (username) => {
-        console.log("api getUserWants", username)
-        API.getUserWants(username)
+    loadWants = () => {
+        // console.log("api getUserWants", username)
+        API.getWants()
             .then(res =>
                 this.setState({ wants: res.data, itemName: "", itemDescription: "" })
             )
@@ -146,6 +148,10 @@ class Profile extends Component {
                                                 placeholder="ItemName (required)"
                                                 value={this.state.itemName}
                                                 onChange={this.handleInputChange} />
+                                            <Input name="userName"
+                                                placeholder=" User Name (required)"
+                                                value={this.state.userName}
+                                                onChange={this.handleInputChange} />
                                             <TextArea name="itemDescription"
                                                 placeholder="ItemDescription (Optional)"
                                                 value={this.state.itemDescription}
@@ -167,11 +173,11 @@ class Profile extends Component {
                                 <Jumbotron>
                                     <h1>My Haves</h1>
                                 </Jumbotron>
-                                {this.state.haves ? (
+                                {this.state.haves.length ? (
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
-                                                <strong>{have.itemName} haggled by {have.user}</strong>
+                                                <strong>{have.itemName}</strong> Description: <strong>{have.itemDescription}</strong> Haggled by <strong>{have.userName}</strong>....
                                                 <DeleteBtn onClick={() => this.deleteHave(have._id)} />
                                             </ListItem>
                                         ))}
@@ -185,12 +191,12 @@ class Profile extends Component {
                                 <Jumbotron>
                                     <h1>My Wants</h1>
                                 </Jumbotron>
-                                {this.state.wants ? (
+                                {this.state.wants.length ? (
                                     <List>
                                         {this.state.wants.map(want => (
                                             <ListItem key={want._id}>
-                                                <strong>{want.itemName} wanted by {want.user}</strong>
-                                                <DeleteBtn onClick={() => this.deleteWants(want._id)} />
+                                                <strong>{want.itemName}</strong> Description: <strong>{want.itemDescription}</strong> Haggled by <strong>{want.userName}</strong>....
+                                                <DeleteBtn onClick={() => this.deleteWant(want._id)} />
                                             </ListItem>
                                         ))}
                                     </List>

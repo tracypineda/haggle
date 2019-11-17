@@ -1,32 +1,32 @@
 import React, { Component } from "react";
 import "./Barter.scss";
 import { Col, Button, Jumbotron } from "reactstrap";
-import { Email, Item, Span, A, renderEmail } from "react-html-email"
+// import { Email, Item, Span, A, renderEmail } from "react-html-email"
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Link } from "react-router-dom";
 import { Row, Container } from "../../components/Grid";
+import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 // import { Col } from "../../components/Grid";
-// import Email from "../../components/Email";
+import Email from "../../components/Email";
 
 class Barter extends Component {
 
   state = {
-    loggedIn: false,
-    user: null,
-    wants: [],
+    user: "",
     haves: [],
     itemName: "",
-    itemDescription: ""
+    itemDescription: "",
+    userName:""
+  
   }
   componentDidMount() {
-    API.getWants()
+    API.getHaves()
     .then(res => 
-      this.setState({ haves: res.data, itemName: "", itemDescription: ""})
+      this.setState({ haves: res.data, itemName: "", itemDescription: "", userName:""})
       )
       .catch(err => console.log(err));
-      console.log("username", this.state);
   };
 
 
@@ -42,13 +42,18 @@ class Barter extends Component {
                             {this.state.haves.length ? (
                               <>
                                 <List>
-                                    {this.state.haves.map(have => (
+                                    {this.state.haves.map(have => ( 
+                                    
+                                
                                         <ListItem key={have._id}>
-                                            <strong> Item Name: {have.itemName} Item Description: {have.itemDescription} haggled by; {have.user}</strong>
-                                            <Button onClick={() => this.deleteHave(have._id)} />
-                                        </ListItem>
-                                    ))}
+                                            <strong> Item Name: {have.itemName} Item Description: {have.itemDescription} haggled by; {have.userName}</strong>
+                                        
+                                            {/* <Button onClick={() => this.deleteHave(have._id)} /> */}
+                                        </ListItem> 
+                                    ))
+                                    }
                                 </List>
+                                    
                                 </>
                             ) : (
                                 <h3>No Results to Display</h3>
@@ -60,11 +65,10 @@ class Barter extends Component {
                                     <Jumbotron>
                                         <h1>Email the Haggler...</h1>
                                     </Jumbotron>
-                                    <Email>
-                                        <h3> Make Contact</h3>
-                                        {/* <img src= "https://blog.addthiscdn.com/wp-content/uploads/sites/3/2019/03/19121735/AddThis-Email-Share-Service.png" /> */}
+                                    
+                                    <Email />                                      
                                         
-                                    </Email>
+                                    
                                 </>
                             ) : null}
                         </Col>
@@ -81,8 +85,8 @@ class Barter extends Component {
                                         <Button className="loginBtn" color="info" block>Login</Button>
                                     </Link>
                                 </>
-                            ) : (
-                                <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
+                            ) : ( null
+                                // <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
                             )}
                         </div>
                     </Col>

@@ -18,8 +18,10 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
     const newWant = new db.Want({
         user: req.user._id,
         itemName: req.body.itemName,
-        itemDescription: req.body.itemDescription
+        itemDescription: req.body.itemDescription,
+        userName: req.body.userName
     });
+    router.post(wantsController.createWants);
 
     newWant.save((err, newWant) => {
         if (err) throw err;
