@@ -9,7 +9,6 @@ findAll: function (req, res) {
         .catch(err => res.status(422).json(err));
 },
 getUserHaves: function (req, res) {
-    
     db.Have
       .find({"user": req.user.username})
       .then(dbHave => {
