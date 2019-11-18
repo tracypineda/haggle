@@ -77,6 +77,11 @@ class Profile extends Component {
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
         }
+        this.setState({
+            itemName: "",
+            itemDescription: "",
+            userName: ""
+        })
     };
 
     handleFormWantSubmit = event => {
@@ -92,6 +97,11 @@ class Profile extends Component {
                 .then(res => API.getWants())
                 .catch(err => console.log(err));
         }
+        this.setState({
+            itemName: "",
+            itemDescription: "",
+            userName: ""
+        })
     };
 
     loadHaves = () => {

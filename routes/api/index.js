@@ -17,7 +17,7 @@ const emailRoutes = require("./emailRoutes");
 router.use("/users", userRoutes);
 router.use("/haves", haveRoutes);
 router.use("/wants", wantRoutes);
-router.use("/send-email", emailRoutes);
+router.use("/", emailRoutes);
 // router.use("/email", emailRoutes);
 
 module.exports = router;

@@ -25,13 +25,14 @@ class Email extends Component {
     }
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.name && this.state.email) {
+        if (this.state.name && this.state.email) 
+        {
             API.sendEmail({
                 name: this.state.name,
                 email: this.state.email,
                 message: this.state.message
             })
-            .then(res => console.log("success", res))    
+            .then(res => console.log("sucess", res))    
             .catch(err => console.log(err));
         }
         this.setState({
@@ -47,31 +48,33 @@ class Email extends Component {
             <Form style= {{width:"600px", marginLeft: "350px", position: "inherit", marginTop:"70px"}}>
                 <FormGroup>
                     <Label htmlFor="name">Your Name</Label>
-                    <Input 
-                    type="text" 
-                    name="name" 
-                    id="name" 
+                    <Input
+                    key="name"
+                    type="name"
+                    id="name"
                     placeholder="name"
+                    name="name"
                     value={this.state.name}
                     onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="email">Your Email</Label>
                     <Input 
+                    key="email"
                     type="email"
-                    name="email"
                     id="email"
-                    placeholder="email"
+                    placeholder="email@email.com"
+                    name="email"
                     value={this.state.email}
                     onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="message">Message</Label>
-                    <Input 
-                    type="textarea"
-                    name="message"
+                    <Input key="message"
+                    type="message"
                     id="message"
                     placeholder="message"
+                    name="message"
                     value={this.state.message}
                     onChange={this.handleInputChange} />
                 </FormGroup>
