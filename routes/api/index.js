@@ -2,6 +2,7 @@ const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const haveRoutes = require("./haveRoutes");
 const wantRoutes = require("./wantRoutes");
+const emailRoutes = require("./emailRoutes");
 
 
 // const DOCUMENT = require("../../models/Images");
@@ -16,6 +17,7 @@ const wantRoutes = require("./wantRoutes");
 router.use("/users", userRoutes);
 router.use("/haves", haveRoutes);
 router.use("/wants", wantRoutes);
+router.use("/send-email", emailRoutes);
 // router.use("/email", emailRoutes);
 
 module.exports = router;

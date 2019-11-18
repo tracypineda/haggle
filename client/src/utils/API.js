@@ -64,5 +64,8 @@ export default {
   deleteWant: function (id) {
     return axios.delete("/api/wants/" + id);
   },
+  sendEmail: function () {
+    return axios.post("/api/send-email")
+  }
 
 };
