@@ -1,0 +1,28 @@
+.authBox {
+  padding-top: 75px;
+  margin: 0 auto;
+  width: 300px;
+  font-family: "Overpass", sans-serif;
+}
+
+.authBox .loginTitle {
+  text-align: center;
+}
+
+.authBox .signupLink {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.authBox .title-font {
+  font-family: "Josefin Sans", cursive;
+}
+
+.authBox #loginBtn {
+  background: #ff4d4d;
+  font-family: "Josefin Sans", cursive;
+  color: grey;
+  border: none;
+  font-size: 1.2em;
+}
+/*# sourceMappingURL=Auth.css.map */

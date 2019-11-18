@@ -1,0 +1,18 @@
+html, body {
+  background: grey;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.notFound {
+  margin-top: 75px;
+  text-align: center;
+}
+
+.notFound img {
+  height: 100px;
+  width: 100px;
+  margin-top: 25px;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,WAAW,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,OAAO;CACf",
+    "sources": [
+        "updatebtn.scss",
+        "../../sass/variable.scss"
+    ],
+    "names": [],
+    "file": "updatebtn.css"
+}

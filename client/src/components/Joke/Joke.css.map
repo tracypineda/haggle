@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACL,MAAM,EAAE,MAAM;EACd,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM;EAClB,WAAW,ECKF,UAAU,EAAE,UAAU;EDJ/B,SAAS,EAAE,KAAK;CACnB",
+    "sources": [
+        "Joke.scss",
+        "../../sass/variable.scss"
+    ],
+    "names": [],
+    "file": "Joke.css"
+}

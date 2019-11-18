@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,GAAG,CAAC;EAEA,cAAc,EAAE,MAAM;EACtB,YAAY,EAAE,MAAM;EACpB,YAAY,EAAE,GAAG;EACjB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;CAEf;;AAGD,AAAA,MAAM,CAAC;EACJ,MAAM,EAAE,IAAI;CACd",
+    "sources": [
+        "Barter.scss",
+        "../../sass/variable.scss"
+    ],
+    "names": [],
+    "file": "Barter.css"
+}

@@ -33,8 +33,7 @@ class MyCarousel extends Component {
                 </div>
                 <div >
                     <img style={{width: "770px"}}  src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
-                    <p className="legend"><h2><strong>And...So Much More...
-                                                        Sign-in to See...</strong></h2></p>
+                    <p className="legend"><h2><strong>Sign-in to See...</strong></h2></p>
                 </div>
 
             </Carousel>

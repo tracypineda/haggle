@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "email.scss",
+        "../../sass/variable.scss"
+    ],
+    "names": [],
+    "file": "email.css"
+}

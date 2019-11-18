@@ -41,6 +41,7 @@ class Barter extends Component {
                             </Jumbotron>
                             {this.state.haves.length ? (
                               <>
+                              <div className= "Haves">
                                 <List>
                                     {this.state.haves.map(have => (
                                         <ListItem key={have._id}>
@@ -49,6 +50,7 @@ class Barter extends Component {
                                         </ListItem>
                                     ))}
                                 </List>
+                                </div>
                                 </>
                             ) : (
                                 <h3>No Results to Display</h3>
@@ -58,11 +60,11 @@ class Barter extends Component {
                             {this.state.haves.length ? (
                                 <>
                                     <Jumbotron>
-                                        <h1>Email the Haggler...</h1>
+                                    <h1>Email the Haggler...</h1>
                                     </Jumbotron>
                                     <Email>
-                                        <h3> Make Contact</h3>
-                                        {/* <img src= "https://blog.addthiscdn.com/wp-content/uploads/sites/3/2019/03/19121735/AddThis-Email-Share-Service.png" /> */}
+                                  <Link to="Profile">   <h3 style={{marginTop: "50px", textAlign: "left", fontSize: "35px"}}> Contact</h3> </Link>
+                                  
                                         
                                     </Email>
                                 </>
@@ -82,7 +84,7 @@ class Barter extends Component {
                                     </Link>
                                 </>
                             ) : (
-                                <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
+                                <ji />
                             )}
                         </div>
                     </Col>
