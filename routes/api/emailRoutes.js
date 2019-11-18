@@ -28,7 +28,7 @@ router.post(
             }
         })
         let mailOptions = {
-             from: "test@testAccount.com", //req.body.email, // sender address
+            from: req.body.email,  // sender address
             to: req.body.to, // list of receivers
             subject: req.body.subject, // Subject line
             text: "New Test Message",//req.body.message, // plain text body
