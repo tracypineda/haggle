@@ -23,7 +23,7 @@ class Email extends Component {
             [name]: value
         });
     }
-    handleSubmit = event => {
+    handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.name && this.state.email) {
             API.sendEmail({
@@ -31,28 +31,51 @@ class Email extends Component {
                 email: this.state.email,
                 message: this.state.message
             })
-                .catch(err => console.log(err));
+            .then(res => console.log("success", res))    
+            .catch(err => console.log(err));
         }
+        this.setState({
+            name: "",
+            email: "",
+            message: ""
+        });
 
     };
     render() {
         return (
             <Container className="emailBox">
-            <Form style= {{width:"600px", marginLeft: "350px", position: "inherit", marginTop:"70px"}} onSubmit={this.handleSubmit}>
+            <Form style= {{width:"600px", marginLeft: "350px", position: "inherit", marginTop:"70px"}}>
                 <FormGroup>
-                    <Label for="name">Your Name</Label>
-                    <Input type="text" name="name" id="name" placeholder="name" value={this.props.name} onChange={this.props.handleInputChange} />
+                    <Label htmlFor="name">Your Name</Label>
+                    <Input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    placeholder="name"
+                    value={this.state.name}
+                    onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="email">Your Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="email" value={this.props.email} onChange={this.props.handleInputChange} />
+                    <Label htmlFor="email">Your Email</Label>
+                    <Input 
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="message">Message</Label>
-                    <Input type="textarea" name="message" id="message" placeholder="message" value={this.props.message}
-                        onChange={this.props.handleInputChange} />
+                    <Label htmlFor="message">Message</Label>
+                    <Input 
+                    type="textarea"
+                    name="message"
+                    id="message"
+                    placeholder="message"
+                    value={this.state.message}
+                    onChange={this.handleInputChange} />
                 </FormGroup>
-                <Button>Send Email</Button>
+                <Button onClick = {this.handleFormSubmit}>Send Email</Button>
             </Form>
             </Container>
 
