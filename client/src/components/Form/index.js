@@ -7,7 +7,6 @@ export function Input(props) {
       <input className="form-control text-control"  {...props} />
     </div>
 
-    
   );
 }
 

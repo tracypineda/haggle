@@ -2,7 +2,7 @@
 # The Haggle Hag Spot 
 
 ## Overview:
-In this app it will use a Node and Express server that is backed my sequelized and MySQL. It  uses CRUD routes for retrieving and adding data from the backend to the frontend and vis versa. The app will meet basic MVC standards. The final product will be visiable on Heroku.
+The _Haggle Hag Spot_ is an interactive web page that allows users to haggle for products. The app will use  React, Node server, and express that is backed my sequelized and MongoDB. It  uses CRUD routes for retrieving and adding data from the backend to the frontend and vis versa. The app will meet basic MVC standards. The final product will be visiable on Heroku.
 
 * **Developers:** Tracy Pineda, and April Long
 * **Institute:** University of Denver
@@ -15,7 +15,7 @@ In this app it will use a Node and Express server that is backed my sequelized a
 | Node                 | Used to build server-side applications |
 | MongoDB              | Used to create tables in the backend   |                    
 | CRUD Functions       | Used for API routes                    |
-| JS and JQuery        | Used for functionality                 |
+| JS                   | Used for functionality                 |
 | React                | Used for all page components           |
 
 
@@ -33,10 +33,11 @@ In this app it will use a Node and Express server that is backed my sequelized a
 ------------------------| -------------------                   |
 | SCSS                  | style element                         |
 | Passport              | for auth                              |
-| ReactStrap            | for styling 
+| ReactStrap            | for styling                           |
+| Nodemailer            | for email connection
 
 
 
-See on GitHub: 
-See on Heroku: 
+See on [GitHub](https://tracypineda.github.io/haggle/) <br>
+See on [Heroku](https://powerful-retreat-89319.herokuapp.com/)
 

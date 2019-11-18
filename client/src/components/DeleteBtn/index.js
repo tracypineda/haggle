@@ -5,7 +5,7 @@ import "../../components/DeleteBtn/deleteBtn.scss";
 function DeleteBtn(props) {
   return (
     <span className="delete-btn" {...props} role="button" tabIndex="0">
-      ✗
+      Delete
     </span>
   );
 }

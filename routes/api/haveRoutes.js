@@ -20,16 +20,13 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
     const newHave = new db.Have({
         user: req.user._id,
         itemName: req.body.itemName,
-        itemDescription: req.body.itemDescription
+        itemDescription: req.body.itemDescription,
+        userName: req.body.userName
     });
 
 // creating an new have to the database
-router.post(havesController.create);
+router.post(havesController.createHaves);
 
-router.route("/:id")
-    .get(havesController.findById)
-    .put(havesController.update)
-    .delete(havesController.remove);
 
 newHave.save((err, newHave) => {
     if (err) throw err;
@@ -62,7 +59,11 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
 });
 // matches with "/api/haves"
 router.route("/")
-    .get(havesController.findAll);
+.get(havesController.findAll);
 
+router.route("/:id")
+    .get(havesController.findById)
+    .put(havesController.update)
+    .delete(havesController.remove);
 
 module.exports = router;

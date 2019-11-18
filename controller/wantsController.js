@@ -8,22 +8,25 @@ module.exports = {
             .then(dbWant => res.json(dbWant))
             .catch(err => res.status(422).json(err));
     },
-    getUserWants: function (req, res) {
-        console.log(req.params.id)
-        db.User 
-            .findById(req.params.id)
-            .then(dbWant => {
-                console.log(dbWant)
-                res.json(dbWant)
-            })
-            .catch(err => res.status(422).json(err));
-    },
+
     findById: function (req, res) {
         db.Want
             .findById(req.params.id)
             .then(dbWant => res.json(dbWant))
             .catch(err => res.status(422).json(err));
     },
+    
+  getUserWants: function (req, res) {
+    
+    db.Want
+      .find({"user": req.user.username})
+      .then(dbWant => {
+        console.log("User related Wants", dbWant);
+        res.json(dbWant)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+
     createWants: function (req, res) {
         db.Want
             .create(req.body)

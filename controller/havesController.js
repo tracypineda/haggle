@@ -8,20 +8,15 @@ findAll: function (req, res) {
         .then(dbHave => res.json(dbHave))
         .catch(err => res.status(422).json(err));
 },
-// findHavesByUser: function (req, res) {
-//     db.Have.aggregate({
-//         $lookup: {
-//             from: "User",
-//             localField: "id",
-//             foreignField: "id",
-//             as: "users_haves"
-//         }
-//     })
-//         .find(req.query)
-//         .sort({ createdAt: -1 })
-//         .then()
-//         .catch(err => res.status(422).json(err));
-// },
+getUserHaves: function (req, res) {
+    db.Have
+      .find({"user": req.user.username})
+      .then(dbHave => {
+        console.log("User related Wants", dbHave);
+        res.json(dbHave)
+      })
+      .catch(err => res.status(422).json(err));
+  },
 findById: function(req, res){
     db.Have
     .findById(req.params.id)

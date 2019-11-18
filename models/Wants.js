@@ -15,7 +15,10 @@ const wantsSchema = new Schema({
     type: String,
     required: [true, "text is required"]
   },
-   
+  userName: {
+    type: String,
+    required: [true, "please enter your username"]
+  },
   createdAt: {
     type: Date,
     default: Date.now()

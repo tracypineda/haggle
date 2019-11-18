@@ -3,7 +3,7 @@ const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
 const wantsController = require("../../controller/wantsController");
-
+const havesController = require("../../controller/havesController");
 // /api/users/login
 // route to login the user
 router.post("/login", passport.authenticate("local", {
@@ -95,5 +95,6 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
 router
   .route("/:id")
   .get(wantsController.getUserWants)
+  .get(havesController.getUserHaves)
 
 module.exports = router;
