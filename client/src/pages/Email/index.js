@@ -52,7 +52,7 @@ class Email extends Component {
                     <Input type="textarea" name="message" id="message" placeholder="message" value={this.props.message}
                         onChange={this.props.handleInputChange} />
                 </FormGroup>
-                <Button>Send Email</Button>
+                <Button onClick={this.handleSubmit}>Send Email</Button>
             </Form>
             </Container>
 

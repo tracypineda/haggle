@@ -5,7 +5,8 @@ import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
-import API from "../../utils/API"
+import API from "../../utils/API";
+
 
 class Profile extends Component {
     state = {
@@ -76,11 +77,21 @@ class Profile extends Component {
             })
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
+
         }
+        this.setState({
+            itemName: "",
+            itemDescription: "",
+            userName: ""
+        })
     };
+    // resetForm = () => {
+    //     this.setState({ itemName: '', itemDescription: '', userName: '' });
+    // }
 
     handleFormWantSubmit = event => {
         event.preventDefault();
+
         if (this.state.itemName && this.state.itemDescription) {
             console.log(this.state.user.username)
             API.createWants({
@@ -92,6 +103,11 @@ class Profile extends Component {
                 .then(res => API.getWants())
                 .catch(err => console.log(err));
         }
+        this.setState({
+            itemName: "",
+            itemDescription: "",
+            userName: ""
+        })
     };
 
     loadHaves = () => {
@@ -143,7 +159,7 @@ class Profile extends Component {
                                         <Jumbotron>
                                             <h1 id="userTitle">Welcome {this.state.user.username}</h1>
                                         </Jumbotron>
-                                        <form>
+                                        <form >
                                             <Input name="itemName"
                                                 placeholder="ItemName (required)"
                                                 value={this.state.itemName}
