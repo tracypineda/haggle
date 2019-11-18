@@ -38,13 +38,14 @@ class Email extends Component {
         this.setState({
             name: "",
             email: "",
-            text: ""
+            message: ""
         });
+
     };
     render() {
         return (
             <Container className="emailBox">
-            <Form style= {{width:"600px", marginLeft: "350px", position: "inherit", marginTop:"70px"}} onSubmit={this.handleSubmit}>
+            <Form style= {{width:"600px", marginLeft: "350px", position: "inherit", marginTop:"70px"}}>
                 <FormGroup>
                     <Label htmlFor="name">Your Name</Label>
                     <Input
