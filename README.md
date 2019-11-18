@@ -38,6 +38,6 @@ The _Haggle Hag Spot_ is an interactive web page that allows users to haggle for
 
 
 
-See on GitHub: [https://tracypineda.github.io/haggle/] <br>
-See on Heroku: [https://powerful-retreat-89319.herokuapp.com/]
+See on [GitHub](https://tracypineda.github.io/haggle/) <br>
+See on [Heroku](https://powerful-retreat-89319.herokuapp.com/)
 
