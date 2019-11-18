@@ -53,7 +53,7 @@ class Email extends Component {
                     id="name" 
                     placeholder="name"
                     value={this.state.name}
-                    onChange={thishandleInputChange} />
+                    onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="email">Your Email</Label>
@@ -66,7 +66,7 @@ class Email extends Component {
                     onChange={this.handleInputChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label hFmlfor="message">Message</Label>
+                    <Label htmlFor="message">Message</Label>
                     <Input 
                     type="textarea"
                     name="message"
