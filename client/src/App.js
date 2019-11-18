@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 // import { Container } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { ENAMETOOLONG } from "constants";
+import Email from "./pages/Email";
  
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/barter" component={Barter} />
+          <Route exact path="/send-email" component={Email} />
           <Route component={NoMatch} />
         </Switch>
       

@@ -99,6 +99,9 @@ export default class TopNav extends Component {
                                             <DropdownItem>
                                                 <NavLink href="/profile">Profile</NavLink>
                                             </DropdownItem>
+                                            <DropdownItem>
+                                                <NavLink href="/send-email">Email</NavLink>
+                                            </DropdownItem>
                                         </>
                                     )}
                                 </DropdownMenu>
