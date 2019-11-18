@@ -1,0 +1,54 @@
+#haveButton {
+  margin: 20px;
+  color: #575252;
+}
+
+#wantButton {
+  margin: 20px;
+  color: #575252;
+}
+
+#wantButton :hover {
+  color: rgba(245, 245, 245, 0.849);
+}
+
+.profilePage {
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.profilePage .noUser {
+  width: 280px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.profilePage .noUser .loginBtn {
+  margin-top: 25px;
+}
+
+.profilePage .noUser .loginLink {
+  color: rgba(245, 245, 245, 0.849);
+}
+
+.profilePage .noUser .loginLink:hover {
+  text-decoration: none;
+}
+
+.profilePage .noUser #loadingIcon {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.profilePage .profileBox {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.profilePage .profileBox #userTitle {
+  text-align: center;
+}
+/*# sourceMappingURL=Profile.css.map */

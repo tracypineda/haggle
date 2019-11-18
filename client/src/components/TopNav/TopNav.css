@@ -1,0 +1,35 @@
+.navbar {
+  background: #ff4d4d;
+  -webkit-box-shadow: 0 3px 10px #575252;
+          box-shadow: 0 3px 10px #575252;
+  font-family: "Overpass", sans-serif;
+}
+
+.navbar a.titleFont {
+  font-family: "Josefin Sans", cursive;
+  color: rgba(245, 245, 245, 0.849);
+  font-size: 25px;
+}
+
+.navbar a.titleFont:hover {
+  color: rgba(245, 245, 245, 0.849);
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.navbar a.nav-link {
+  font-size: 1.2em;
+}
+
+.navbar .light-text {
+  color: rgba(245, 245, 245, 0.849);
+}
+
+.navbar .fas fa-female {
+  margin-right: 15px;
+}
+
+.backback {
+  background-color: #fdf7fc;
+}
+/*# sourceMappingURL=TopNav.css.map */

@@ -9,7 +9,7 @@ function Jumbotron({children}) {
       
         <p>You wanna look good for half the NO PRICE? </p>
         
-          <button className="btn btn-primary btn-lg">Learn more</button>
+         
         </div> 
       </div>
        

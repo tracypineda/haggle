@@ -1,3 +1,4 @@
+
 // import React, { Component } from "react";
 // import "./email.scss";
 // import axios from "axios";
@@ -55,4 +56,4 @@
 //     );
 //   }
 // }
-// export default Email;
+// export default Ema

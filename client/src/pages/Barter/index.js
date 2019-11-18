@@ -35,12 +35,14 @@ class Barter extends Component {
             <Container fluid>
                 <Row>
 
+
                     <Col md={6}>
                         <Jumbotron>
                             <h1>Items Up For Haggle... </h1>
                         </Jumbotron>
                         {this.state.haves.length ? (
                             <>
+
                                 <List>
                                     {this.state.haves.map(have => (
 
@@ -55,6 +57,7 @@ class Barter extends Component {
                                     ))
                                     }
                                 </List>
+
 
                             </>
                         ) : (
@@ -76,6 +79,7 @@ class Barter extends Component {
                         ) : null}
                     </Col>
 
+
                 </Row>
 
                 <Row>
@@ -88,9 +92,10 @@ class Barter extends Component {
                                         <Button className="loginBtn" color="info" block>Login</Button>
                                     </Link>
                                 </>
-                            ) : (null
+                    ) : (null
                                     // <img id="loadingIcon" src="https://giphy.com/gifs/loading-11ASZtb7vdJagM" alt="loading" />
                                 )}
+
                         </div>
                     </Col>
                 </Row>

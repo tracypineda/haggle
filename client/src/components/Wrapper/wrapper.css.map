@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "wrapper.scss",
+        "../../sass/variable.scss"
+    ],
+    "names": [],
+    "file": "wrapper.css"
+}
