@@ -157,6 +157,11 @@ class Profile extends Component {
                                 <div className="profilePage">
                                     <div className="profileBox">
                                         <Jumbotron>
+                                       
+
+ 
+    
+}
                                             <h1 id="userTitle">Welcome {this.state.user.username}</h1>
                                         </Jumbotron>
                                         <form >

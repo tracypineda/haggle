@@ -1,23 +1,23 @@
 @import "../../sass/variable.scss";
 
-// .homeBox {
-//     margin: 0 auto;
-//     margin-top: 10vh;
-//     width: 100px;
-//     height: 100px;
-//     font-family: $light-text;
-//     background-color: grey;
-//     background-image: url("https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg");
-//     ;
+.homeBox {
+    margin: 0 auto;
+    margin-top: 10vh;
+    width: 50px;
+    height: 50px;
+    font-family: $light-text;
+    background-color: grey;
+    background-image: url("https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg");
+    ;
+}
 
- 
-    
-// }
+
+
 .background {
     // background-color: $background-image;
     //background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/02/Subtle-Grunge-Texture-Pattern.jpg);
     font-size: 10px; 
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: $text-font;
     
 }
  

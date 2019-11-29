@@ -1,3 +1,5 @@
+@import "../../sass/variable.scss";
+
 .container {
 
     color: black;
@@ -5,6 +7,18 @@
 }
 
 h1 {
-font-size: 100px;
+font-size: 70px;
+font-style: $text-font;
 
 }
+
+p {
+    font-size: 25px;
+}
+
+h4 {
+    color:$primary-color;
+    font-style: oblique;
+ 
+}
+

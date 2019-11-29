@@ -5,9 +5,10 @@ function Jumbotron({children}) {
   return (
     <div className="container">
       <div className="jumbotron">
-      <h1>Welcome to The Haggle Hag Spot</h1>
+      <h1>The Haggle Hag Spot </h1>
       
-        <p>You wanna look good for half the NO PRICE? </p>
+        <p>Where... You can look good for</p>
+        <h4> <strong>NO PRICE</strong></h4>
         
          
         </div> 
