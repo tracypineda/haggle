@@ -4,7 +4,8 @@ import API from "../../utils/API";
 
 import "./Home.scss";
 import Carousel from "../../components/Carousel";
-import Jumbotron from "../../components/Jumbotron"
+import Jumbotron from "../../components/Jumbotron";
+import Homebox from "../../components/Homebox";
 
 class Home extends Component {
 
@@ -34,20 +35,21 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="background">
-<Jumbotron>
-        <div className="homeBox"></div>
-          <h1>Welcome to the Haggle Hag Spot</h1>
-          </Jumbotron>
+     
+        <div className= "background">
+          <Jumbotron />
+         
           <Carousel />
-      </div>
-    
-       
-
-
-    );
-
+   {/* <div className= "jumbo">
+   <Jumbotron />
+   </div> */}
+          
+          </div>
+   
+   
+   
+   
+   );
   }
 }
-
 export default Home;

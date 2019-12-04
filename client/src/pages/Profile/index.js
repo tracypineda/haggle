@@ -106,7 +106,8 @@ class Profile extends Component {
         this.setState({
             itemName: "",
             itemDescription: "",
-            userName: ""
+            userName: "",
+            contactPreference: ""
         })
     };
 
@@ -157,11 +158,7 @@ class Profile extends Component {
                                 <div className="profilePage">
                                     <div className="profileBox">
                                         <Jumbotron>
-                                       
 
- 
-    
-}
                                             <h1 id="userTitle">Welcome {this.state.user.username}</h1>
                                         </Jumbotron>
                                         <form >
@@ -177,22 +174,28 @@ class Profile extends Component {
                                                 placeholder="ItemDescription (Optional)"
                                                 value={this.state.itemDescription}
                                                 onChange={this.handleInputChange} />
+                                            <TextArea name="contactPrefernce"
+                                                placeholder="contactPreference (required)"
+                                                value={this.state.itemDescriptioncontactPrefernce}
+                                                onChange={this.handleInputChange} />
                                             <FormBtn id="haveButton"
                                                 onClick={this.handleFormHaveSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
-                                            >Submit Have</FormBtn>
+                                            ><strong>Submit Have</strong></FormBtn>
                                             <FormBtn id="wantButton"
                                                 onClick={this.handleFormWantSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
-                                            >Submit Want</FormBtn>
+                                            ><strong>Submit Want</strong></FormBtn>
                                         </form>
                                     </div>
                                 </div>
                             </Col>
 
-                            <Col md={4}>
-                                <Jumbotron>
-                                    <h1>My Haves</h1>
+
+
+                            <Col md={4} >
+                                <Jumbotron style={{ backgroundColor: "lightgrey" }}>
+                                    <h1><strong>My Haves</strong> </h1>
                                 </Jumbotron>
                                 {this.state.haves.length ? (
                                     <List>
@@ -208,8 +211,11 @@ class Profile extends Component {
                                     )}
                             </Col>
 
-                            <Col md={4}>
-                                <Jumbotron>
+
+
+
+                            <Col md={4} >
+                                <Jumbotron style={{ backgroundColor: "darkGrey" }}>
                                     <h1>My Wants</h1>
                                 </Jumbotron>
                                 {this.state.wants.length ? (
@@ -225,6 +231,7 @@ class Profile extends Component {
                                         <h3>No Results to Display</h3>
                                     )}
                             </Col>
+
                         </>
                     ) : (
                             <Col md={12}>

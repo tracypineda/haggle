@@ -20,8 +20,22 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className="buttonButton">
       {props.children}
     </button>
   );
 }
+
+export function RadioBtn(props) {
+  return (
+    <div className= "radioButtons">
+      <textarea className="form-control text-control" rows="10"
+       {...props} style={{ display: "flex", marginBottom: 10 }} className="buttonButton" />
+       {props.children} 
+    </div> 
+      
+  );
+}
+    // <button {...props} style={{ display: "flex", marginBottom: 10 }} className="buttonButton">
+    //   {props.children}
+    // </button>

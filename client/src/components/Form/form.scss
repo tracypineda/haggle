@@ -1,0 +1,13 @@
+@import "../../sass/variable.scss";
+
+.buttonButton {
+    background-image: url("https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg");
+    color: black;
+    margin-right: 40px;
+}
+
+.buttonButton:hover {
+    background-color:$primary-color;
+    opacity: 0.4;
+   
+}
