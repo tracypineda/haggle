@@ -4,25 +4,32 @@
     width: 100%;
     margin: 0 auto;
     position: fixed;
-    bottom: -130px;
+    bottom: -10px;
     height: $footer-height;
-    background: $primary-color;
+    background: $dark-text;
     box-shadow: 1px 7px 3px 8px $dark-text;
     font-family: $text-font;
     color: $light-text;
     p {
         line-height: $footer-height;
-        width: 33%;
+        width: 22%;
         margin: 0 auto;
-        
+        font-size: 15px;
         text-align: center;
         display: inline-block;
+    }
+
+    p:hover {
+       opacity: 0.2;
     }
 
     .gh-icon {
         color: $light-text;
         font-size: 1.3em;
+
     }
+
+    
 
     .react-icon {
         font-size: 1.3em;
@@ -30,6 +37,48 @@
         -moz-animation:spin 25s linear infinite;
         animation:spin 25s linear infinite;
     }
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+      
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+      
+      .fa-google {
+        background: #dd4b39;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+      
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+      
+      .fa-youtube {
+        background: #bb0000;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+      
+      .fa-instagram {
+        background: #125688;
+        color: white;
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
 
 
 }

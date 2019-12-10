@@ -32,9 +32,10 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       
-       <Footer />
       
+       <Footer />
       </div>
+      
     </Router>
   );
 }

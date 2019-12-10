@@ -1,14 +1,15 @@
 @import "../../sass/variable.scss";
 
     #haveButton {
-        margin: 20px;
+       
         // background-color: blueviolet;
-        color: $dark-text;
+        color: black;
+        margin-left: 10px;
         
     }  
     #wantButton {
-        margin: 20px;
-        color: $dark-text; 
+        
+        color: black; 
         :hover {
             color: $light-text;
             

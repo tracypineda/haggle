@@ -10,13 +10,13 @@ class MyCarousel extends Component {
     render() {
         return (
             <Carousel className="carousel" showArrows={true} onChange={onChange} onClickItem={onClickItem}>
-                <div style={{height: "100px", weight: "100px"}}>
+                <div style={{height: "80px", weight: "80px"}}>
                 <img style={{width: "770px"}}  src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
                 
                     <p className="legend" ><h1>Welcome to the Haggle Hag Spot</h1></p>
                 </div>
                 <div>
-                    <img style={{width: "770px"}} src="https://cdn.shopify.com/s/files/1/0293/9277/files/Home_-_gn_2_1200X.jpg?v=1561506874" />
+                    <img style={{width: "770px"}} src="http://stmedia.stimg.co/CTYP_StreetStyle_EllenLawson.jpg?" />
                     <p className="legend"><h2><strong>Women's Clothing</strong></h2></p>
                 </div>
                 <div>
@@ -32,12 +32,14 @@ class MyCarousel extends Component {
                     <p className="legend"><h2><strong>Accessories</strong></h2></p>
                 </div>
                 <div >
-                    <img style={{width: "770px"}}  src="https://static5.depositphotos.com/1000797/453/v/450/depositphotos_4532300-stock-illustration-woman-in-red.jpg" />
+                    <img style={{minHeight: "100%", minWidth: "100%", height: "280px"}}  src="http://new.hearingfusion.com/wp-content/uploads/2015/03/Sign-Up-Now-Icon.png" />
                     <p className="legend"><h2><strong>Sign-in to See...</strong></h2></p>
                 </div>
-
+                
             </Carousel>
+        
         );
+        
 
     }
 

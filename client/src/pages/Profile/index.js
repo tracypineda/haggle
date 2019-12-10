@@ -5,7 +5,8 @@ import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
-import API from "../../utils/API"
+import API from "../../utils/API";
+
 
 class Profile extends Component {
     state = {
@@ -76,6 +77,7 @@ class Profile extends Component {
             })
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
+
         }
         this.setState({
             itemName: "",
@@ -83,9 +85,13 @@ class Profile extends Component {
             userName: ""
         })
     };
+    // resetForm = () => {
+    //     this.setState({ itemName: '', itemDescription: '', userName: '' });
+    // }
 
     handleFormWantSubmit = event => {
         event.preventDefault();
+
         if (this.state.itemName && this.state.itemDescription) {
             console.log(this.state.user.username)
             API.createWants({
@@ -100,7 +106,8 @@ class Profile extends Component {
         this.setState({
             itemName: "",
             itemDescription: "",
-            userName: ""
+            userName: "",
+            contactPreference: ""
         })
     };
 
@@ -151,9 +158,10 @@ class Profile extends Component {
                                 <div className="profilePage">
                                     <div className="profileBox">
                                         <Jumbotron>
-                                            <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+
+                                            <h1 id="userTitle"><strong>Welcome{this.state.user.username}</strong> </h1>
                                         </Jumbotron>
-                                        <form>
+                                        <form >
                                             <Input name="itemName"
                                                 placeholder="ItemName (required)"
                                                 value={this.state.itemName}
@@ -166,28 +174,36 @@ class Profile extends Component {
                                                 placeholder="ItemDescription (Optional)"
                                                 value={this.state.itemDescription}
                                                 onChange={this.handleInputChange} />
+                                            <Input name="contactPrefernce"
+                                                placeholder="contactPreference (required)"
+                                                value={this.state.itemDescriptioncontactPrefernce}
+                                                onChange={this.handleInputChange} />
                                             <FormBtn id="haveButton"
                                                 onClick={this.handleFormHaveSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
-                                            >Submit Have</FormBtn>
+                                            ><strong>Submit Have</strong></FormBtn>
                                             <FormBtn id="wantButton"
                                                 onClick={this.handleFormWantSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
-                                            >Submit Want</FormBtn>
+                                            ><strong>Submit Want</strong></FormBtn>
                                         </form>
                                     </div>
                                 </div>
                             </Col>
 
-                            <Col md={4}>
-                                <Jumbotron>
-                                    <h1>My Haves</h1>
+
+
+                            <Col md={4} >
+                                <Jumbotron style={{ backgroundColor: "lightgrey" }}>
+                                    <h1><strong>My Haves</strong> </h1>
+                                    <p style={{fontSize: "15px"}}> What items do you have? </p>
+                                    <p style={{fontSize: "15px"}}>List the Items Below...</p>
                                 </Jumbotron>
                                 {this.state.haves.length ? (
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
-                                                <strong>{have.itemName}</strong> Description: <strong>{have.itemDescription}</strong> Haggled by <strong>{have.userName}</strong>....
+                                                <strong>{have.itemName}</strong> Description: <strong>{have.itemDescription}</strong> Haggled by <strong> {have.userName}</strong>....
                                                 <DeleteBtn onClick={() => this.deleteHave(have._id)} />
                                             </ListItem>
                                         ))}
@@ -197,9 +213,14 @@ class Profile extends Component {
                                     )}
                             </Col>
 
-                            <Col md={4}>
-                                <Jumbotron>
-                                    <h1>My Wants</h1>
+
+
+
+                            <Col md={4} >
+                                <Jumbotron style={{ backgroundColor: "darkGrey" }}>
+                                    <h1><strong>My Wants</strong></h1>
+                                    <p style={{fontSize: "15px"}}> What items do you want? </p>
+                                    <p style={{fontSize: "15px"}}>List the Items Below...</p>
                                 </Jumbotron>
                                 {this.state.wants.length ? (
                                     <List>
@@ -214,6 +235,7 @@ class Profile extends Component {
                                         <h3>No Results to Display</h3>
                                     )}
                             </Col>
+
                         </>
                     ) : (
                             <Col md={12}>
