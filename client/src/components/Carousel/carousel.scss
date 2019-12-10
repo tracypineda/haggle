@@ -4,26 +4,30 @@
     height: 65px;
     font-family: 'Kalam', cursive;
     margin: 10px;
+}
     
 h1 {
     font-family: 'Cedarville Cursive', cursive;
 }
 
 .background {
-    margin-top: 20px;}
+    margin-top: 20px;
+}
 
 
 .carousel .thumb {
 height: 100px;
 width: 100px;
-border-radius: 55px;
+border-radius: 45px;
 margin-bottom: 20px;
+margin-top: 20px;
+margin-right: 20px;
 
 
 }
 
 
-.carousel .thumb img{
+.carousel .thumb img {
     max-width: 185%;
     max-height: 185%;
     
