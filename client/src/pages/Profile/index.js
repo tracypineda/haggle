@@ -159,7 +159,7 @@ class Profile extends Component {
                                     <div className="profileBox">
                                         <Jumbotron>
 
-                                            <h1 id="userTitle">Welcome {this.state.user.username}</h1>
+                                            <h1 id="userTitle"><strong>Welcome{this.state.user.username}</strong> </h1>
                                         </Jumbotron>
                                         <form >
                                             <Input name="itemName"
@@ -174,7 +174,7 @@ class Profile extends Component {
                                                 placeholder="ItemDescription (Optional)"
                                                 value={this.state.itemDescription}
                                                 onChange={this.handleInputChange} />
-                                            <TextArea name="contactPrefernce"
+                                            <Input name="contactPrefernce"
                                                 placeholder="contactPreference (required)"
                                                 value={this.state.itemDescriptioncontactPrefernce}
                                                 onChange={this.handleInputChange} />
@@ -196,12 +196,14 @@ class Profile extends Component {
                             <Col md={4} >
                                 <Jumbotron style={{ backgroundColor: "lightgrey" }}>
                                     <h1><strong>My Haves</strong> </h1>
+                                    <p style={{fontSize: "15px"}}> What items do you have? </p>
+                                    <p style={{fontSize: "15px"}}>List the Items Below...</p>
                                 </Jumbotron>
                                 {this.state.haves.length ? (
                                     <List>
                                         {this.state.haves.map(have => (
                                             <ListItem key={have._id}>
-                                                <strong>{have.itemName}</strong> Description: <strong>{have.itemDescription}</strong> Haggled by <strong>{have.userName}</strong>....
+                                                <strong>{have.itemName}</strong> Description: <strong>{have.itemDescription}</strong> Haggled by <strong> {have.userName}</strong>....
                                                 <DeleteBtn onClick={() => this.deleteHave(have._id)} />
                                             </ListItem>
                                         ))}
@@ -216,7 +218,9 @@ class Profile extends Component {
 
                             <Col md={4} >
                                 <Jumbotron style={{ backgroundColor: "darkGrey" }}>
-                                    <h1>My Wants</h1>
+                                    <h1><strong>My Wants</strong></h1>
+                                    <p style={{fontSize: "15px"}}> What items do you want? </p>
+                                    <p style={{fontSize: "15px"}}>List the Items Below...</p>
                                 </Jumbotron>
                                 {this.state.wants.length ? (
                                     <List>

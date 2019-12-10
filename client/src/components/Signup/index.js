@@ -81,7 +81,7 @@ class Signup extends Component {
                     <FormGroup>
                         <Label for="confirmPassword">Confirm Password</Label>
                         <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" value={this.props.confirmPassword} onChange={this.props.handleInputChange} valid={this.state.confirmPassword} />
-                        <FormText>at least 6 characters, 1 capital & 1 number</FormText>
+                        <FormText><strong>at least 6 characters, 1 capital & 1 number</strong></FormText>
                     </FormGroup>
                     {/* if all fields are valid, allow the user to submit the form */}
                     {(this.state.validUsername && this.state.validPassword && this.state.confirmPassword) ? (

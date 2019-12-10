@@ -3,9 +3,8 @@
 .legend {
     height: 65px;
     font-family: 'Kalam', cursive;
-    margin-top: 10px;
-}
-
+    margin: 10px;
+    
 h1 {
     font-family: 'Cedarville Cursive', cursive;
 }
@@ -15,33 +14,42 @@ h1 {
 
 
 .carousel .thumb {
-height: 80px;
-width: 50px;
-border-radius: 50px;
+height: 100px;
+width: 100px;
+border-radius: 55px;
 margin-bottom: 20px;
+
 
 }
 
+
 .carousel .thumb img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 185%;
+    max-height: 185%;
     
+}
+
+
+img:hover {
+    
+    opacity: 2.0;
 }
 .carousel {
     // width: 2035px !important;
     height: 344px; 
     align-content: center;
-    font-size: 25%;
     font-family: 'Kaushan Script', cursive;
     margin-top: 0px;
     align-content: center;
     margin: 0px;
     float: left;
+   
 }
 
 .carousel .carousel
 {
-    height: fit-content;
+    height: 80%;
+    
     
 }
 
