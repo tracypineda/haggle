@@ -58,7 +58,7 @@ export default class TopNav extends Component {
             <div className= "backback">
                 <Navbar className="navbar" light expand="md">
 
-                    <NavbarBrand href="/" className="titleFont">Haggle Spot</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont"></NavbarBrand>
 
                    
 
@@ -96,12 +96,12 @@ export default class TopNav extends Component {
                                             <DropdownItem>
                                                 <NavLink href="/barter">Haggle</NavLink>
                                             </DropdownItem>
-                                            <DropdownItem>
+                                            {/* <DropdownItem>
                                                 <NavLink href="/profile">Profile</NavLink>
                                             </DropdownItem>
                                             <DropdownItem>
                                                 <NavLink href="/send-email">Email</NavLink>
-                                            </DropdownItem>
+                                            </DropdownItem> */}
                                         </>
                                     )}
                                 </DropdownMenu>

@@ -3,22 +3,26 @@
     #haveButton {
        
         // background-color: blueviolet;
-        color: black;
+        color: whitesmoke;
         margin-left: 10px;
         
     }  
     #wantButton {
         
-        color: black; 
+        color:whitesmoke; 
         :hover {
             color: $light-text;
             
         }
     }
 
+    
+
 .profilePage {
     margin: 0 auto;
     margin-top: 25px;
+    
+}
 
     .noUser {
         width: 280px;
@@ -38,6 +42,9 @@
             text-decoration: none;
         }
 
+        // .profileBox2 {
+        //     background-image: url("http://www.mindfuljourneyman.com/uploads/2/9/8/2/29820207/7297652_orig.jpg");
+        // }
         #loadingIcon {
             height: 200px;
             width: 200px;
@@ -48,7 +55,9 @@
 
     .profileBox {
         #userTitle {
-            text-align: center,
+            text-align: center;
+            
+
         }
         width: 50%;
         margin-left: 10%;
