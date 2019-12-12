@@ -146,7 +146,7 @@ class Profile extends Component {
 
     };
 
-    deleteWants = id => {
+    deleteWant = id => {
         API.deleteWant(id)
             .then(res => this.loadWants())
             .catch(err => console.log(err));
@@ -165,7 +165,8 @@ class Profile extends Component {
                                     <div className="profileBox">
                                         <Jumbotron>
 
-                                            <h1 id="userTitle"><strong>Welcome{this.state.user.username}</strong> </h1>
+                                            <h1 id="userTitle"><strong>Welcome  {this.state.user.username}</strong> </h1>
+                                            <p style={{fontSize: "15px", color: "black", marginTop: "15px" }}>Browse around here!</p>
                                         </Jumbotron>
                                         <form >
                                             <Input name="itemName"
@@ -184,7 +185,6 @@ class Profile extends Component {
                                                 placeholder="contactPreference (required)"
                                                 value={this.state.itemDescriptioncontactPrefernce}
                                                 onChange={this.handleInputChange} />
-
                                             <FormBtn id="haveButton"
                                                 onClick={this.handleFormHaveSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
@@ -213,10 +213,12 @@ class Profile extends Component {
 
 
                             <Col md={4} >
-                                <Jumbotron style={{ backgroundColor: "lightgrey" }}>
+                                
+                                <Jumbotron style={{backgroundColor: "lightgrey", color: "black", backgroundImage: "url('https://alisonwisnom.realestate-hq.com/wp-content/uploads/sites/4/2019/03/MustHaves_1200x630-1024x538.jpg')"}}>
                                     <h1><strong>My Haves</strong> </h1>
-                                    <p style={{ fontSize: "15px" }}> What items do you have? </p>
-                                    <p style={{ fontSize: "15px" }}>List the Items Below...</p>
+                                    <p style={{fontSize: "15px", color: "white"}}><strong> What Items are you <i>Hagggling</i>?</strong></p>
+                                    <p style={{fontSize: "15px", color: "white"}}><strong>List the Items Below...</strong></p>
+
                                 </Jumbotron>
                                 {this.state.haves.length ? (
                                     <List>
@@ -230,16 +232,17 @@ class Profile extends Component {
                                 ) : (
                                         <h3>No Results to Display</h3>
                                     )}
+                                   
                             </Col>
 
-
+                                    
 
 
                             <Col md={4} >
-                                <Jumbotron style={{ backgroundColor: "darkGrey" }}>
+                                <Jumbotron style={{backgroundColor: "lightGrey", color: "black", backgroundImage: "url('https://alisonwisnom.realestate-hq.com/wp-content/uploads/sites/4/2019/03/MustHaves_1200x630-1024x538.jpg')"}}>
                                     <h1><strong>My Wants</strong></h1>
-                                    <p style={{ fontSize: "15px" }}> What items do you want? </p>
-                                    <p style={{ fontSize: "15px" }}>List the Items Below...</p>
+                                    <p style={{fontSize: "15px", color: "white"}}> What items are you Looking for? </p>
+                                    <p style={{fontSize: "15px", color: "white"}}>List the Items Below...</p>
                                 </Jumbotron>
                                 {this.state.wants.length ? (
                                     <List>
