@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Col, Button, Jumbotron } from 'reactstrap';
+import { Col, Button, Jumbotron, FormGroup, FormText, Label } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
+import { timingSafeEqual } from 'crypto';
 
 
 class Profile extends Component {
@@ -15,7 +16,8 @@ class Profile extends Component {
         loading: true,
         itemName: "",
         itemDescription: "",
-        userName: ""
+        userName: "",
+        wantImage:""
     }
 
     componentDidMount() {
@@ -73,7 +75,8 @@ class Profile extends Component {
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
                 user: this.state.user.username,
-                userName: this.state.userName
+                userName: this.state.userName,
+                haveImage: this.state.haveImage
             })
                 .then(res => API.getHaves())
                 .catch(err => console.log(err));
@@ -82,7 +85,8 @@ class Profile extends Component {
         this.setState({
             itemName: "",
             itemDescription: "",
-            userName: ""
+            userName: "",
+            haveImage: ""
         })
     };
     // resetForm = () => {
@@ -98,7 +102,8 @@ class Profile extends Component {
                 itemName: this.state.itemName,
                 itemDescription: this.state.itemDescription,
                 user: this.state.user.username,
-                userName: this.state.userName
+                userName: this.state.userName,
+                wantImage: this.state.wantImage
             })
                 .then(res => API.getWants())
                 .catch(err => console.log(err));
@@ -107,7 +112,8 @@ class Profile extends Component {
             itemName: "",
             itemDescription: "",
             userName: "",
-            contactPreference: ""
+            contactPreference: "",
+            wantImage: ""
         })
     };
 
@@ -175,14 +181,30 @@ class Profile extends Component {
                                                 placeholder="ItemDescription (Optional)"
                                                 value={this.state.itemDescription}
                                                 onChange={this.handleInputChange} />
+                                            <Input name="contactPrefernce"
+                                                placeholder="contactPreference (required)"
+                                                value={this.state.itemDescriptioncontactPrefernce}
+                                                onChange={this.handleInputChange} />
                                             <FormBtn id="haveButton"
                                                 onClick={this.handleFormHaveSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
                                             ><strong>Submit Have</strong></FormBtn>
+                                            <Input name="file"
+                                                placeholder="Upload HAVE Pics here"
+                                                value={this.state.haveImage}
+                                                type="file"
+                                                id="exampleFile"
+                                                onChange={this.handleInputChange} />
                                             <FormBtn id="wantButton"
                                                 onClick={this.handleFormWantSubmit}
                                                 disabled={!(this.state.itemName && this.state.itemDescription)}
                                             ><strong>Submit Want</strong></FormBtn>
+                                            <Input name="file"
+                                                placeholder="Upload WANT Pics here"
+                                                value={this.state.wantImage}
+                                                type="file"
+                                                id="exampleFile"
+                                                onChange={this.handleInputChange} />
                                         </form>
                                     </div>
                                 </div>
@@ -196,6 +218,7 @@ class Profile extends Component {
                                     <h1><strong>My Haves</strong> </h1>
                                     <p style={{fontSize: "15px", color: "white"}}><strong> What Items are you <i>Hagggling</i>?</strong></p>
                                     <p style={{fontSize: "15px", color: "white"}}><strong>List the Items Below...</strong></p>
+
                                 </Jumbotron>
                                 {this.state.haves.length ? (
                                     <List>

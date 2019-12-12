@@ -84,6 +84,9 @@ export default class TopNav extends Component {
                                             <DropdownItem>
                                                 <NavLink onClick={this.logout}>Logout</NavLink>
                                             </DropdownItem>
+                                            <DropdownItem>
+                                                <NavLink href="/send-email">Email</NavLink>
+                                            </DropdownItem>
                                         </>
                                     ) : (
                                         <>
@@ -96,12 +99,6 @@ export default class TopNav extends Component {
                                             <DropdownItem>
                                                 <NavLink href="/barter">Haggle</NavLink>
                                             </DropdownItem>
-                                            {/* <DropdownItem>
-                                                <NavLink href="/profile">Profile</NavLink>
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                <NavLink href="/send-email">Email</NavLink>
-                                            </DropdownItem> */}
                                         </>
                                     )}
                                 </DropdownMenu>

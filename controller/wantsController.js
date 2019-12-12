@@ -29,7 +29,12 @@ module.exports = {
 
     createWants: function (req, res) {
         db.Want
-            .create(req.body)
+            .create({
+                owner: req.body.owner,
+                itemName: req.body.itemName,
+                itemDescription: req.body.itemDescription,
+                wantImage: req.body.wantImage,
+                userName: req.body.userName,})
             .then(dbWant => res.json(dbWant))
             .catch(err => res.status(422).json(err));
     },
