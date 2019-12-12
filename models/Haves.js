@@ -15,6 +15,9 @@ const havesSchema = new Schema({
     type: String,
     required: [true, "text is required"]
   },
+  haveImage: {
+    type: String
+  },
   userName: {
     type: String,
     required: [true, "please enter your username"]

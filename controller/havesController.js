@@ -25,7 +25,12 @@ findById: function(req, res){
 },
 createHaves: function(req,res){
     db.Have
-    .create(req.body)
+    .create.create({
+        owner: req.body.owner,
+        itemName: req.body.itemName,
+        itemDescription: req.body.itemDescription,
+        haveImage: req.body.haveImage,
+        userName: req.body.userName,})
     .then(dbHave => res.json(dbHave))
     .catch(err => res.status(422).json(err));
 },

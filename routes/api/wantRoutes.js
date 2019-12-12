@@ -19,7 +19,8 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
         user: req.user._id,
         itemName: req.body.itemName,
         itemDescription: req.body.itemDescription,
-        userName: req.body.userName
+        userName: req.body.userName,
+        wantImage: req.body.wantImage
     });
     router.post(wantsController.createWants);
 
@@ -37,7 +38,7 @@ router.post("/new", authMiddleware.isLoggedIn, function (req, res, next) {
 router.delete("/remove", authMiddleware.isLoggedIn, function (req, res, next) {
     db.Want.findByIdAndDelete(req.body.id, (err, want) => {
         if (err) throw err;
-        db.User.findByIdAndUpdate(want._id, { $pull: { "wants": want._id } }, { new: true }, (err, user) => {
+        db.User.findByIdAndUpdate(want._id, { $pull: { 'wants': want._id } }, { new: true }, (err, user) => {
             if (err) throw err;
             res.send(user);
         });
@@ -57,5 +58,10 @@ router.put("/update", authMiddleware.isLoggedIn, function (req, res, next) {
 //api/want/
 router.route("/")
 .get(wantsController.findAll);
+
+router.route("/:id")
+    .get(wantsController.findById)
+    .put(wantsController.update)
+    .delete(wantsController.remove);
 
 module.exports = router;
